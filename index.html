@@ -4,189 +4,583 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nathan Lee — Revenue Operations &amp; GTM Strategy</title>
-<meta name="description" content="Nathan Lee — VP, Revenue Operations &amp; GTM Strategy. Case studies in enterprise RevOps, AI automation, and GTM systems.">
+<meta name="description" content="VP Revenue Operations &amp; GTM Strategy. I transform messy revenue systems into scalable operating models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#FAF7F2;
-    --card:#FFFFFF;
-    --card-tint:#F3EEE6;
-    --border:#E4DED2;
-    --text:#2C2C2A;
-    --text-secondary:#5F5E5A;
-    --accent:#993C1D;
-    --accent-tint:#FAECE7;
-    --accent-mid:#D85A30;
-    --teal:#0F6E56;
-    --teal-tint:#E1F5EE;
-    --max:760px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-    font-size:16px;
-    line-height:1.7;
-  }
-  h1,h2,h3{
-    font-family:'Lora',Georgia,serif;
-    font-weight:500;
-    color:var(--text);
-    margin:0;
-  }
-  p{margin:0 0 1rem;}
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
-
-  header{
-    position:sticky;top:0;
-    background:rgba(250,247,242,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--border);
-    z-index:10;
-  }
-  nav.wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 24px;
-  }
-  .brand{
-    font-family:'Lora',serif;font-size:18px;font-weight:500;color:var(--text);
-    text-decoration:none;
-  }
-  .nav-links{display:flex;gap:28px;font-size:14px;}
-  .nav-links a{color:var(--text-secondary);}
-  .nav-links a:hover{color:var(--accent);text-decoration:none;}
-
-  section{padding:72px 0;}
-  section.tight{padding:48px 0;}
-  .eyebrow{
-    font-size:13px;letter-spacing:1px;text-transform:uppercase;
-    color:var(--accent);margin:0 0 12px;font-weight:500;
-  }
-  .hero h1{font-size:34px;line-height:1.35;margin-bottom:18px;}
-  .hero p.lead{font-size:17px;color:var(--text-secondary);max-width:560px;}
-  .cta-row{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:11px 20px;border-radius:6px;
-    font-size:14px;font-weight:500;border:1px solid var(--text);
-    color:var(--text);
-  }
-  .btn:hover{background:var(--text);color:var(--bg);text-decoration:none;}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
-  .btn.primary:hover{background:var(--accent-mid);border-color:var(--accent-mid);color:#fff;}
-
-  .section-head{margin-bottom:40px;}
-  .section-head h2{font-size:26px;}
-
-  .case{
-    border:1px solid var(--border);
-    border-radius:12px;
-    background:var(--card);
-    padding:36px 36px 32px;
-    margin-bottom:28px;
-  }
-  .case-num{
-    font-family:'Lora',serif;font-size:13px;color:var(--text-secondary);
-    letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
-  }
-  .case h3{font-size:21px;margin-bottom:20px;}
-  .case .block{margin-bottom:16px;}
-  .case .label{
-    font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;
-    color:var(--accent);margin-bottom:6px;display:block;
-  }
-  .case .block p{color:var(--text-secondary);font-size:15.5px;}
-  .case .block.result p{color:var(--text);}
-
-  .mockup{
-    margin:22px 0 26px;
-    border:1px solid var(--border);
-    border-radius:8px;
-    background:var(--card-tint);
-    padding:20px 22px;
-  }
-  .mockup .note{font-size:11px;color:var(--text-secondary);margin-top:10px;font-style:italic;}
-
-  .stat-mockup{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-  .stat-block{text-align:center;}
-  .stat-block .num{font-family:'Lora',serif;font-size:28px;color:var(--accent);display:block;}
-  .stat-block .cap{font-size:12px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;}
-  .stat-arrow{font-size:22px;color:var(--text-secondary);}
-
-  .flow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
-  .flow .step{
-    background:#fff;border:1px solid var(--border);border-radius:6px;
-    padding:10px 14px;font-size:13px;color:var(--text);flex:1;min-width:120px;text-align:center;
-  }
-  .flow .arrow{color:var(--text-secondary);font-size:16px;}
-
-  .matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-  .matrix .cell{
-    background:#fff;border:1px solid var(--border);border-radius:6px;
-    padding:10px 8px;text-align:center;font-size:12px;color:var(--text-secondary);
-  }
-  .matrix .cell.hl{background:var(--accent-tint);color:var(--accent);border-color:var(--accent-tint);font-weight:500;}
-  .matrix .cell.hl2{background:var(--teal-tint);color:var(--teal);border-color:var(--teal-tint);font-weight:500;}
-
-  .lookup-mock{background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px;}
-  .lookup-row{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
-  .lookup-field{
-    flex:1;min-width:90px;background:var(--card-tint);border:1px solid var(--border);
-    border-radius:4px;padding:8px 10px;font-size:12px;color:var(--text-secondary);
-  }
-  .lookup-result{
-    border-top:1px solid var(--border);padding-top:10px;margin-top:6px;
-    font-size:13px;color:var(--text);
-  }
-  .lookup-result strong{color:var(--accent);}
-
-  .roadmap{display:flex;gap:8px;flex-wrap:wrap;}
-  .roadmap .phase{
-    flex:1;min-width:110px;background:#fff;border:1px solid var(--border);
-    border-radius:6px;padding:12px 10px;
-  }
-  .roadmap .phase .t{font-size:12.5px;font-weight:600;margin-bottom:6px;}
-  .roadmap .phase .s{
-    font-size:10.5px;text-transform:uppercase;letter-spacing:0.5px;
-    color:var(--text-secondary);
-  }
-  .roadmap .phase.current .s{color:var(--accent);}
-
-  .strip-list{list-style:none;margin:0;padding:0;}
-  .strip-list li{
-    padding:16px 0;border-bottom:1px solid var(--border);font-size:15px;
-    color:var(--text-secondary);
-  }
-  .strip-list li:last-child{border-bottom:none;}
-  .strip-list li strong{color:var(--text);font-weight:600;}
-
-  .tags{display:flex;flex-wrap:wrap;gap:8px;}
-  .tag{
-    background:var(--card-tint);border:1px solid var(--border);
-    border-radius:20px;padding:6px 14px;font-size:13px;color:var(--text-secondary);
+  :root {
+    --bg: #FAFBFC;
+    --bg-secondary: #F2F4F8;
+    --card: #FFFFFF;
+    --border: #E1E4EA;
+    --text: #1A1C1E;
+    --text-secondary: #6B7280;
+    --text-tertiary: #9CA3AF;
+    --accent: #0F766E;
+    --accent-light: #D1FAE5;
+    --accent-tint: #F0FDF4;
+    --slate: #475569;
+    --slate-light: #E2E8F0;
+    --max: 1024px;
   }
 
-  .about p{font-size:15.5px;color:var(--text-secondary);}
-  .about p.voice{color:var(--text);font-style:italic;font-family:'Lora',serif;font-size:17px;}
-
-  footer{border-top:1px solid var(--border);padding:40px 0 60px;}
-  footer .wrap{
-    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F172A;
+      --bg-secondary: #1E293B;
+      --card: #1E293B;
+      --border: #334155;
+      --text: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --text-tertiary: #94A3B8;
+      --accent: #14B8A6;
+      --accent-light: #134E4A;
+      --accent-tint: #0F172A;
+      --slate: #E2E8F0;
+      --slate-light: #334155;
+    }
   }
-  footer .links{display:flex;gap:22px;font-size:14px;}
-  footer .copy{font-size:13px;color:var(--text-secondary);}
 
-  @media (max-width:640px){
-    .hero h1{font-size:27px;}
-    .case{padding:26px 22px;}
-    .matrix{grid-template-columns:repeat(2,1fr);}
-    footer .wrap{flex-direction:column;align-items:flex-start;}
+  [data-theme="dark"] {
+    --bg: #0F172A;
+    --bg-secondary: #1E293B;
+    --card: #1E293B;
+    --border: #334155;
+    --text: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --text-tertiary: #94A3B8;
+    --accent: #14B8A6;
+    --accent-light: #134E4A;
+    --accent-tint: #0F172A;
+    --slate: #E2E8F0;
+    --slate-light: #334155;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+  }
+
+  h1 { font-size: 44px; line-height: 1.2; }
+  h2 { font-size: 32px; line-height: 1.25; }
+  h3 { font-size: 24px; line-height: 1.3; }
+  h4 { font-size: 18px; line-height: 1.4; }
+
+  p { margin: 0 0 1.2rem; }
+  p:last-child { margin-bottom: 0; }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  a:hover { opacity: 0.8; text-decoration: underline; }
+
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 251, 252, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    header:not([data-theme="light"]) {
+      background: rgba(15, 23, 42, 0.85);
+    }
+  }
+
+  [data-theme="dark"] header {
+    background: rgba(15, 23, 42, 0.85);
+  }
+
+  nav.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+  }
+
+  .brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Sections */
+  section {
+    padding: 80px 0;
+  }
+
+  section.tight {
+    padding: 60px 0;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 100px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+
+  .hero h1 {
+    margin-bottom: 24px;
+    max-width: 800px;
+  }
+
+  .hero .lead {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    line-height: 1.7;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid var(--border);
+    color: var(--text);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--bg-secondary);
+    border-color: var(--text);
+    text-decoration: none;
+  }
+
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .btn.primary:hover {
+    background: var(--slate);
+    border-color: var(--slate);
+    opacity: 1;
+  }
+
+  /* Capabilities */
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .capability-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .capability-card h3 {
+    margin-bottom: 16px;
+    color: var(--accent);
+    font-size: 20px;
+  }
+
+  .capability-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 768px) {
+    .capabilities-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Section head */
+  .section-head {
+    margin-bottom: 48px;
+  }
+
+  .section-head h2 {
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 700px;
+  }
+
+  /* Case studies */
+  .case {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 32px;
+  }
+
+  .case-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .case h3 {
+    margin-bottom: 28px;
+    font-size: 26px;
+  }
+
+  .case .block {
+    margin-bottom: 28px;
+  }
+
+  .case .label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .case .block p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .case .block.result p {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Mockups */
+  .mockup {
+    margin: 28px 0 32px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    padding: 24px;
+  }
+
+  .mockup .note {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .stat-mockup {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .stat-block {
+    text-align: center;
+  }
+
+  .stat-block .num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-block .cap {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+  }
+
+  .stat-arrow {
+    font-size: 24px;
+    color: var(--text-tertiary);
+  }
+
+  .flow {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .flow .step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .flow .arrow {
+    color: var(--text-tertiary);
+    font-size: 18px;
+  }
+
+  .matrix {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .matrix .cell {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .matrix .cell.hl {
+    background: var(--accent-tint);
+    color: var(--accent);
+    border-color: var(--accent-light);
+  }
+
+  .matrix .cell.hl2 {
+    background: var(--slate-light);
+    color: var(--slate);
+    border-color: var(--slate-light);
+  }
+
+  .roadmap {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .roadmap .phase {
+    flex: 1;
+    min-width: 130px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 12px;
+  }
+
+  .roadmap .phase .t {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .roadmap .phase .s {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-tertiary);
+  }
+
+  .roadmap .phase.current .t {
+    color: var(--accent);
+  }
+
+  .roadmap .phase.current .s {
+    color: var(--accent);
+  }
+
+  /* Systems and programs */
+  .strip-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .strip-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .strip-list li:last-child {
+    border-bottom: none;
+  }
+
+  .strip-list li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* About */
+  .about p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .about p.voice {
+    color: var(--text);
+    font-style: italic;
+    font-size: 18px;
+    margin: 28px 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0 60px;
+  }
+
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  footer .links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+  }
+
+  footer .copy {
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+    h4 { font-size: 16px; }
+
+    .hero {
+      padding-top: 80px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .case {
+      padding: 28px;
+    }
+
+    .matrix {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer .wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav-links {
+      gap: 20px;
+    }
+
+    .cta-row {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
   }
 </style>
 </head>
@@ -196,29 +590,59 @@
   <nav class="wrap">
     <a class="brand" href="#top">Nathan Lee</a>
     <div class="nav-links">
+      <a href="#capabilities">What I Do</a>
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="assets/Nathan-Lee-Resume.pdf" target="_blank">Resume</a>
-      <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
 
 <div id="top"></div>
 
-<section class="hero wrap" style="padding-top:64px;">
-  <p class="eyebrow">Nathan Lee</p>
-  <h1>An operator's approach to revenue strategy, built on eleven years inside the machine.</h1>
-  <p class="lead">I run revenue operations and GTM strategy at a Fortune 500 bank. My job is designing the programs, the frameworks, and the systems that change how a sales org actually runs, then usually building the tools that make them real. Five of those programs are below, with the numbers attached.</p>
+<section class="hero wrap">
+  <p class="eyebrow">VP, Revenue Operations & GTM Strategy</p>
+  <h1>I don't just buy you tools. I transform your messy revenue systems into scalable, living operating models.</h1>
+  <p class="lead">For eleven years, I've been the person hired to fix broken revenue processes inside enterprise organizations. I design the strategies, the frameworks, and the systems. Then I usually build the tools that make them real. Along the way, I've doubled revenue per account, launched new prospecting channels, and built governance structures that keep sales and product aligned.</p>
   <div class="cta-row">
-    <a class="btn primary" href="#work">View case studies</a>
+    <a class="btn primary" href="#work">See case studies</a>
     <a class="btn" href="assets/Nathan-Lee-Resume.pdf" target="_blank">Download resume</a>
+  </div>
+</section>
+
+<section class="wrap tight" id="capabilities">
+  <div class="section-head">
+    <h2>What I actually do</h2>
+    <p class="section-desc">I move between strategy, systems, and people. This is where the work gets real.</p>
+  </div>
+
+  <div class="capabilities-grid">
+    <div class="capability-card">
+      <h3>Strategy & Operations</h3>
+      <p>I design the annual revenue strategies and the programs that execute them—client deepening plans, account segmentation frameworks, prospecting initiatives. I work with sales leadership to understand the problem, turn it into a real plan, and make sure the org knows how to run it.</p>
+    </div>
+
+    <div class="capability-card">
+      <h3>Systems & Tools</h3>
+      <p>I build the infrastructure that keeps your revenue processes running. That means data integration, BI platforms, governed data sources, and usually at least one AI-powered automation that saves your team dozens of hours a year. I work in Salesforce, Power BI, Tableau, and Python. I know what's possible.</p>
+    </div>
+
+    <div class="capability-card">
+      <h3>Program Design & Change</h3>
+      <p>Strategy that doesn't land with the sales team is just documentation. I own the full program rollout—change management, training, adoption metrics, and the feedback loops that make it better over time. I work with RMs, product partners, and leadership to make sure new initiatives actually stick.</p>
+    </div>
+
+    <div class="capability-card">
+      <h3>Leadership & Governance</h3>
+      <p>I lead cross-functional teams through ambiguous problems: defining territory coverage models, designing incentive structures, building competitive research functions, and creating the governance frameworks that let distributed teams make consistent decisions.</p>
+    </div>
   </div>
 </section>
 
 <section class="wrap" id="work">
   <div class="section-head">
     <h2>Case studies</h2>
+    <p class="section-desc">Here's what transformation actually looks like.</p>
   </div>
 
   <div class="case">
@@ -280,74 +704,14 @@
 
   <div class="case">
     <div class="case-num">Case study 3</div>
-    <h3>Reverse Referral (product-only prospecting)</h3>
-
-    <div class="mockup">
-      <div class="stat-mockup">
-        <div class="stat-block"><span class="num">$5-10M</span><span class="cap">New 12-month revenue</span></div>
-        <div class="stat-arrow">·</div>
-        <div class="stat-block"><span class="num">25-50</span><span class="cap">New-to-bank corporate clients</span></div>
-        <div class="stat-arrow">·</div>
-        <div class="stat-block"><span class="num">Yr 1</span><span class="cap">Post-rollout</span></div>
-      </div>
-    </div>
-
-    <div class="block">
-      <span class="label">The problem</span>
-      <p>The bank had many clients using exactly one product and nothing else. Single-product clients like that are already inside the door, already trusting the bank enough to use one thing. Nobody was doing anything about it.</p>
-    </div>
-    <div class="block">
-      <span class="label">What I built</span>
-      <p>A prospecting program that identified those accounts and routed them to RMs as warm leads, with the pitch being simple: you already trust us for one thing, here's what else we do.</p>
-    </div>
-    <div class="block result">
-      <span class="label">The result</span>
-      <p>$5-10M in new 12-month revenue, across 25-50 new-to-bank corporate clients, in the first year post-rollout.</p>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-num">Case study 4</div>
-    <h3>Account segmentation framework</h3>
-
-    <div class="mockup">
-      <div class="matrix">
-        <div class="cell hl">Priority 1</div>
-        <div class="cell">Priority 2</div>
-        <div class="cell">Priority 3</div>
-        <div class="cell">Priority 4</div>
-        <div class="cell hl2">Retention flag</div>
-        <div class="cell hl2">Deepening flag</div>
-        <div class="cell hl2">VIP flag</div>
-        <div class="cell">Standard</div>
-      </div>
-      <p class="note">Structure shown for illustration — not the actual tier names or logic used.</p>
-    </div>
-
-    <div class="block">
-      <span class="label">The problem</span>
-      <p>Not every client or prospect deserves the same amount of attention, but without a shared framework, everyone decides that for themselves. That means inconsistent coverage and RMs spending time on the wrong accounts.</p>
-    </div>
-    <div class="block">
-      <span class="label">What I built</span>
-      <p>A structured tiering system for clients and a parallel framework for prospects, so prioritization runs off shared logic instead of individual judgment calls. On top of the structured tiers, I built in a manual override so an RM can flag a specific account for retention focus, deepening focus, or VIP treatment when the situation calls for it.</p>
-    </div>
-    <div class="block result">
-      <span class="label">The result</span>
-      <p>A shared prioritization language that now feeds territory coverage, marketing lead routing, and how leadership reads pipeline health.</p>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-num">Case study 5</div>
-    <h3>Territory coverage governance</h3>
+    <h3>Territory Coverage Governance</h3>
 
     <div class="mockup">
       <div class="roadmap">
         <div class="phase current"><div class="t">Define coverage</div><div class="s">Current focus</div></div>
         <div class="phase current"><div class="t">Store coverage</div><div class="s">Current focus</div></div>
         <div class="phase"><div class="t">Visualize coverage</div><div class="s">Near-term</div></div>
-        <div class="phase"><div class="t">Integrate &amp; automate</div><div class="s">Future</div></div>
+        <div class="phase"><div class="t">Integrate & automate</div><div class="s">Future</div></div>
       </div>
     </div>
 
@@ -368,14 +732,14 @@
 
 <section class="wrap tight">
   <div class="section-head">
-    <h2>Systems and programs</h2>
+    <h2>Other systems I've built</h2>
   </div>
   <ul class="strip-list">
-    <li><strong>Board-level competitive analysis</strong> — quarterly competitor research, presented up to CEO and board.</li>
-    <li><strong>Seismic rollout</strong> — deployed to 400+ users, integrated into Salesforce.</li>
-    <li><strong>BDO commercial operating model</strong> — designed the GTM strategy, market coverage model, incentive compensation structure, territory design, hiring capacity model, and onboarding/handoff workflow for a new 15-person Business Development Officer function.</li>
-    <li><strong>Marketing-to-sales lead scoring</strong> — MQL methodology built on Marketo.</li>
-    <li><strong>Portfolio profitability monitoring</strong> — ongoing tracking capability for account-level profitability.</li>
+    <li><strong>Reverse Referral (product-only prospecting)</strong> — Identified single-product clients and routed them to RMs as warm leads. Year one: $5-10M in new revenue across 25-50 new-to-bank clients.</li>
+    <li><strong>Account segmentation framework</strong> — Designed a structured tiering system with manual override flags for retention, deepening, and VIP focus. Feeds territory coverage, marketing lead routing, and pipeline health assessment.</li>
+    <li><strong>Board-level competitive analysis</strong> — Quarterly competitive research presented to CEO and board, tracking market shifts and positioning implications.</li>
+    <li><strong>BDO commercial operating model</strong> — Designed GTM strategy, market coverage, incentive structure, territory design, hiring model, and onboarding workflow for new 15-person Business Development function.</li>
+    <li><strong>Seismic rollout</strong> — Deployed to 400+ users, fully integrated into Salesforce with adoption metrics and ongoing optimization.</li>
   </ul>
 </section>
 
@@ -406,8 +770,9 @@
   <div class="section-head">
     <h2>About</h2>
   </div>
-  <p>Eleven-plus years in enterprise revenue operations, GTM strategy, and program management at a Fortune 500 bank, currently VP, Revenue Operations &amp; GTM Strategy. MBA from Western Kentucky University, where I also teach as an adjunct professor, covering management, finance, AI, and entrepreneurship to 100+ students a year. Salesforce Certified Administrator and Microsoft Certified AI Transformation Leader.</p>
-  <p class="voice">I'm not someone who dabbles in AI tools. I build them, deploy them, and put them in front of real revenue teams.</p>
+  <p>Eleven-plus years in enterprise revenue operations, GTM strategy, and program management at a Fortune 500 bank, currently VP, Revenue Operations & GTM Strategy. MBA from Western Kentucky University, where I also teach as an adjunct professor, covering management, finance, AI, and entrepreneurship to 100+ students a year. Salesforce Certified Administrator and Microsoft Certified AI Transformation Leader.</p>
+  <p class="voice">I don't dabble in AI. I build it, deploy it, and put it in front of revenue teams that need it to actually work. Same with systems, frameworks, and programs—my job is to make the thing real, not just make the presentation.</p>
+  <p>I move fast. I care about outcomes, not politics. I work best with leaders who want the thing actually built, not just talked about.</p>
 </section>
 
 <footer id="contact">
@@ -416,7 +781,7 @@
     <div class="links">
       <a href="assets/Nathan-Lee-Resume.pdf" target="_blank">Resume</a>
       <a href="https://www.linkedin.com/in/nathanleeky/" target="_blank">LinkedIn</a>
-      <a href="mailto:Contact@nathanleeky.com">Contact@nathanleeky.com</a>
+      <a href="mailto:Contact@nathanleeky.com">Email</a>
     </div>
   </div>
 </footer>
