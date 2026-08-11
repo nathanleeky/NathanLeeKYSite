@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nathan Lee — Revenue Operations &amp; GTM Strategy</title>
-<meta name="description" content="VP Revenue Operations &amp; GTM Strategy. I transform messy revenue systems into scalable operating models.">
+<meta name="description" content="VP Revenue Operations &amp; GTM Strategy. I transform closets of revenue tools into organized, usable, and frequented spaces.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -236,7 +236,7 @@
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 32px;
-    min-height: 240px;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
   }
@@ -459,6 +459,33 @@
     color: var(--accent);
   }
 
+  /* Philosophy items */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+  }
+
+  .philosophy-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+  }
+
+  .philosophy-item p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  @media (max-width: 768px) {
+    .philosophy-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* Systems and programs */
   .strip-list {
     list-style: none;
@@ -509,11 +536,43 @@
   .about p.voice {
     color: var(--text);
     font-style: italic;
-    font-size: 18px;
-    margin: 28px 0;
+    font-size: 17px;
+    margin: 24px 0;
     padding: 20px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+  }
+
+  /* Fun projects */
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .project-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .project-item h4 {
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+
+  .project-item p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .project-item a {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
   }
 
   /* Footer */
@@ -592,8 +651,8 @@
     <div class="nav-links">
       <a href="#capabilities">What I Do</a>
       <a href="#work">Work</a>
+      <a href="#philosophy">AI Philosophy</a>
       <a href="#about">About</a>
-      <a href="assets/Nathan-Lee-Resume.pdf" target="_blank">Resume</a>
     </div>
   </nav>
 </header>
@@ -602,8 +661,9 @@
 
 <section class="hero wrap">
   <p class="eyebrow">VP, Revenue Operations & GTM Strategy</p>
-  <h1>I don't just buy you tools. I transform your messy revenue systems into scalable, living operating models.</h1>
-  <p class="lead">For eleven years, I've been the person hired to fix broken revenue processes inside enterprise organizations. I design the strategies, the frameworks, and the systems. Then I usually build the tools that make them real. Along the way, I've doubled revenue per account, launched new prospecting channels, and built governance structures that keep sales and product aligned.</p>
+  <h1>I transform closets of revenue tools into organized, usable spaces.</h1>
+  <p class="lead">For ten years, I've been the person hired to fix and enhance revenue processes inside enterprise organizations. I architect strategies, workflows, and systems that fall under Sales Enablement functions. I'm constantly in conversations about bringing tools to life, including how AI can solve real selling pain points. I take broken or disorganized revenue operations and turn them into scalable, functional systems that actually get used.</p>
+  <p class="lead" style="margin-bottom: 24px; font-weight: 500; color: var(--text);">I've doubled YoY product deepening revenue on top tier accounts, launched prospecting programs with 6-figure revenue impact on new-to-bank clients, and built governance structures that kept sales teams aligned for years.</p>
   <div class="cta-row">
     <a class="btn primary" href="#work">See case studies</a>
     <a class="btn" href="assets/Nathan-Lee-Resume.pdf" target="_blank">Download resume</a>
@@ -613,28 +673,28 @@
 <section class="wrap tight" id="capabilities">
   <div class="section-head">
     <h2>What I actually do</h2>
-    <p class="section-desc">I move between strategy, systems, and people. This is where the work gets real.</p>
+    <p class="section-desc">I move between corporate strategy, technology systems, and sales teams to bring siloed groups together on a shared vision.</p>
   </div>
 
   <div class="capabilities-grid">
     <div class="capability-card">
       <h3>Strategy & Operations</h3>
-      <p>I design the annual revenue strategies and the programs that execute them—client deepening plans, account segmentation frameworks, prospecting initiatives. I work with sales leadership to understand the problem, turn it into a real plan, and make sure the org knows how to run it.</p>
+      <p>I design revenue strategies and manage the programs that execute them: client deepening plans, account segmentation frameworks, prospecting initiatives. I work with sales leadership to understand the problem, turn it into a real plan, get executive buy-in, and manage stakeholder governance.</p>
     </div>
 
     <div class="capability-card">
       <h3>Systems & Tools</h3>
-      <p>I build the infrastructure that keeps your revenue processes running. That means data integration, BI platforms, governed data sources, and usually at least one AI-powered automation that saves your team dozens of hours a year. I work in Salesforce, Power BI, Tableau, and Python. I know what's possible.</p>
+      <p>I architect the processes and workflows that keep revenue departments running. CRM integration, sales dashboards, BI tools, and usually at least one AI-powered automation that saves teams hundreds of hours a year. I work in Salesforce, Power BI, Tableau, Snowflake, Microsoft AI & PowerApps. I know what's possible and what's best for the end users.</p>
     </div>
 
     <div class="capability-card">
       <h3>Program Design & Change</h3>
-      <p>Strategy that doesn't land with the sales team is just documentation. I own the full program rollout—change management, training, adoption metrics, and the feedback loops that make it better over time. I work with RMs, product partners, and leadership to make sure new initiatives actually stick.</p>
+      <p>Strategy that doesn't land with the sales team is just documentation and wasted resources. I own full program rollout: change management, training, adoption metrics, feedback loops that make it better over time. I work with sellers, product partners, and leadership to make sure new initiatives are actually used.</p>
     </div>
 
     <div class="capability-card">
       <h3>Leadership & Governance</h3>
-      <p>I lead cross-functional teams through ambiguous problems: defining territory coverage models, designing incentive structures, building competitive research functions, and creating the governance frameworks that let distributed teams make consistent decisions.</p>
+      <p>I lead cross-functional teams through enterprise-wide problem solving: territory coverage models, incentive structures, competitive research deliverables, governance frameworks for programs. I make sure distributed teams can make consistent decisions without slowing things down.</p>
     </div>
   </div>
 </section>
@@ -642,7 +702,6 @@
 <section class="wrap" id="work">
   <div class="section-head">
     <h2>Case studies</h2>
-    <p class="section-desc">Here's what transformation actually looks like.</p>
   </div>
 
   <div class="case">
@@ -694,7 +753,7 @@
     </div>
     <div class="block">
       <span class="label">What I built</span>
-      <p>An AI-generated packet that goes out by email ten days before the internal strategy session, ahead of the RM and product partners sitting down together. It pulls from Salesforce, internal source systems, and external data like Dun &amp; Bradstreet, and turns all of it into one summary everyone reads before they're in the room.</p>
+      <p>An AI-generated packet that goes out by email ten days before the internal strategy session. It pulls from Salesforce, internal source systems, and external data like Dun &amp; Bradstreet, turning all of it into one summary everyone reads before they're in the room.</p>
     </div>
     <div class="block result">
       <span class="label">The result</span>
@@ -717,15 +776,40 @@
 
     <div class="block">
       <span class="label">The problem</span>
-      <p>Coverage existed, but nobody could see all of it at once. Different groups inside the bank managed their own account and territory assignment models, some by geography, some by industry, some by account size, with no shared documentation. If you needed to know who owned a given account or prospect, the honest answer was usually "check a spreadsheet, or ask around."</p>
+      <p>Coverage existed, but nobody could see all of it at once. Different groups managed their own account and territory assignment models—some by geography, some by industry, some by account size—with no shared documentation. If you needed to know who owned a given account or prospect, the honest answer was usually "check a spreadsheet, or ask around."</p>
     </div>
     <div class="block">
       <span class="label">What I built</span>
-      <p>I led the initiative to fix that. I benchmarked how competing banks handle territory coverage, pulled in outside research from firms like McKinsey, and turned that into a concrete recommendation: a governed data source with defined owners for each model, documentation standards every group would follow, and a searchable coverage directory that answers who covers what and why. I didn't stop at the recommendation. I built a working prototype of the lookup tool myself, so leadership could see the concept before being asked to invest in it.</p>
+      <p>I led the initiative to fix that. I benchmarked how competing banks handle territory coverage, pulled in research from firms like McKinsey, and turned that into a concrete recommendation: a governed data source with defined owners for each model, documentation standards every group would follow, and a searchable coverage directory that answers who covers what and why. I didn't stop at the recommendation. I built a working prototype of the lookup tool myself, so leadership could see the concept before being asked to invest in it.</p>
     </div>
     <div class="block result">
       <span class="label">The result</span>
-      <p>Leadership signed off on the governance model and the phased roadmap. This one's still an active initiative I'm driving, not a closed case, and that's part of the point: this is the kind of ambiguous, cross-team problem that lands on my desk, and how I go about solving it.</p>
+      <p>Leadership signed off on the governance model and phased roadmap. This one's still active—part of the point: this is the kind of ambiguous, cross-team problem that lands on my desk, and how I go about solving it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap tight" id="philosophy">
+  <div class="section-head">
+    <h2>AI Philosophy</h2>
+    <p class="section-desc">I don't just implement AI tools. I think carefully about when and how they actually work.</p>
+  </div>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-item">
+      <p><strong>AI works best when invisible and just works.</strong> The moment your team thinks about the AI, it's too visible. Good AI solutions disappear into the workflow.</p>
+    </div>
+
+    <div class="philosophy-item">
+      <p><strong>AI can't solve broken or incomplete workflows.</strong> If your process is already messy, adding AI just automates the mess. Fix the workflow first, then add intelligence.</p>
+    </div>
+
+    <div class="philosophy-item">
+      <p><strong>Match complexity to capability.</strong> Don't design an AI solution at complexity level 9 if your team is at fluency level 4. Meet people where they are.</p>
+    </div>
+
+    <div class="philosophy-item">
+      <p><strong>The real work is adoption.</strong> Building the AI is the easy part. Getting sales teams to actually use it, trust it, and embed it into their day is the hard part.</p>
     </div>
   </div>
 </section>
@@ -770,9 +854,34 @@
   <div class="section-head">
     <h2>About</h2>
   </div>
-  <p>Eleven-plus years in enterprise revenue operations, GTM strategy, and program management at a Fortune 500 bank, currently VP, Revenue Operations & GTM Strategy. MBA from Western Kentucky University, where I also teach as an adjunct professor, covering management, finance, AI, and entrepreneurship to 100+ students a year. Salesforce Certified Administrator and Microsoft Certified AI Transformation Leader.</p>
-  <p class="voice">I don't dabble in AI. I build it, deploy it, and put it in front of revenue teams that need it to actually work. Same with systems, frameworks, and programs—my job is to make the thing real, not just make the presentation.</p>
+  <p>I'm a husband, father, deacon, and preacher who happens to also work at a Fortune 500 bank as a VP of Revenue Operations & GTM Strategy. I have an MBA from Western Kentucky University, where I also teach as an adjunct professor, covering management, finance, and entrepreneurship to 100+ students a year. I'm a Salesforce Certified Administrator and Microsoft Certified AI Transformation Leader. My early career was focused on startup consulting, business planning, and financial projections for small business owners.</p>
+
+  <p class="voice">I'm a huge fantasy book nerd (Brandon Sanderson is the GOAT), I enjoy playing pickleball with the family, and I check out the local coffee shop at any new town I visit. I ground myself in relationships, which helps us all navigate an ever-changing world where technology and social media are fighting for our attention.</p>
+
   <p>I move fast. I care about outcomes, not politics. I work best with leaders who want the thing actually built, not just talked about.</p>
+</section>
+
+<section class="wrap tight">
+  <div class="section-head">
+    <h2>Fun projects</h2>
+  </div>
+
+  <div class="projects-list">
+    <div class="project-item">
+      <h4>Congregate Classroom</h4>
+      <p>Bible class curriculum built for modern churches. More coming soon.</p>
+    </div>
+
+    <div class="project-item">
+      <h4>Publisher author</h4>
+      <p>Writing about faith, strategy, and how they intersect. More coming soon.</p>
+    </div>
+
+    <div class="project-item">
+      <h4>AV + Wedding DJ</h4>
+      <p>Behind the scenes at weddings and events. More coming soon.</p>
+    </div>
+  </div>
 </section>
 
 <footer id="contact">
