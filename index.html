@@ -172,6 +172,26 @@
     padding-top: 100px;
   }
 
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 4px solid var(--accent);
+  }
+
   .eyebrow {
     font-size: 12px;
     letter-spacing: 1.5px;
@@ -190,6 +210,28 @@
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 32px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .hero-photo {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-layout {
+      gap: 24px;
+    }
+
+    .hero-photo {
+      max-width: 250px;
+    }
   }
 
   .cta-row {
@@ -860,12 +902,20 @@
 
 <!-- Hero Section -->
 <section class="hero wrap">
-  <p class="eyebrow">VP, REVENUE OPERATIONS &amp; GTM STRATEGY</p>
-  <h1>I build revenue systems that actually get used.</h1>
-  <p class="subheading">For ten years, I've been the person hired to fix and enhance revenue processes inside enterprise organizations. I architect strategies, workflows, and systems that fall under Sales Enablement functions. I'm constantly in conversations about bringing tools to life, including how AI can solve real selling pain points. I take broken or disorganized revenue operations and turn them into scalable, functional systems that teams actually adopt and use.</p>
-  <div class="cta-row">
-    <a href="#work" class="btn primary">See my work</a>
-    <a href="#thinking" class="btn">Get insights</a>
+  <div class="hero-layout">
+    <div>
+      <p class="eyebrow">VP, REVENUE OPERATIONS &amp; GTM STRATEGY</p>
+      <h1>I build revenue systems that actually get used.</h1>
+      <p class="subheading">For ten years, I've been the person hired to fix and enhance revenue processes inside enterprise organizations. I architect strategies, workflows, and systems that fall under Sales Enablement functions. I'm constantly in conversations about bringing tools to life, including how AI can solve real selling pain points. I take broken or disorganized revenue operations and turn them into scalable, functional systems that teams actually adopt and use.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn primary">See my work</a>
+        <a href="#thinking" class="btn">Get insights</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="images/nathan-professional.jpg" alt="Nathan Lee">
+    </div>
   </div>
 </section>
 
