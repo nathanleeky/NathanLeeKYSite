@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nathan Lee — Revenue Operations &amp; GTM Strategy</title>
-<meta name="description" content="VP Revenue Operations &amp; GTM Strategy. I transform closets of revenue tools into organized, usable, and frequented spaces.">
+<meta name="description" content="VP Revenue Operations &amp; GTM Strategy. I build revenue systems that actually get used. University Professor. Systems Builder.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,6 +12,7 @@
   :root {
     --bg: #FAFBFC;
     --bg-secondary: #F2F4F8;
+    --bg-dark: #1A2333;
     --card: #FFFFFF;
     --border: #E1E4EA;
     --text: #1A1C1E;
@@ -29,6 +30,7 @@
     :root:not([data-theme="light"]) {
       --bg: #0F172A;
       --bg-secondary: #1E293B;
+      --bg-dark: #000000;
       --card: #1E293B;
       --border: #334155;
       --text: #F1F5F9;
@@ -45,6 +47,7 @@
   [data-theme="dark"] {
     --bg: #0F172A;
     --bg-secondary: #1E293B;
+    --bg-dark: #000000;
     --card: #1E293B;
     --border: #334155;
     --text: #F1F5F9;
@@ -69,7 +72,7 @@
     line-height: 1.6;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5 {
     font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     color: var(--text);
@@ -80,6 +83,7 @@
   h2 { font-size: 32px; line-height: 1.25; }
   h3 { font-size: 24px; line-height: 1.3; }
   h4 { font-size: 18px; line-height: 1.4; }
+  h5 { font-size: 16px; line-height: 1.4; font-weight: 600; }
 
   p { margin: 0 0 1.2rem; }
   p:last-child { margin-bottom: 0; }
@@ -158,6 +162,11 @@
     padding: 60px 0;
   }
 
+  section.dark {
+    background: var(--bg-dark);
+    color: white;
+  }
+
   /* Hero */
   .hero {
     padding-top: 100px;
@@ -174,14 +183,13 @@
 
   .hero h1 {
     margin-bottom: 24px;
-    max-width: 800px;
   }
 
-  .hero .lead {
+  .hero .subheading {
     font-size: 18px;
     color: var(--text-secondary);
-    max-width: 700px;
     line-height: 1.7;
+    margin-bottom: 32px;
   }
 
   .cta-row {
@@ -203,6 +211,7 @@
     background: transparent;
     cursor: pointer;
     transition: all 0.2s;
+    text-decoration: none;
   }
 
   .btn:hover {
@@ -221,6 +230,183 @@
     background: var(--slate);
     border-color: var(--slate);
     opacity: 1;
+  }
+
+  /* Social Proof Section */
+  .stats-section {
+    background: var(--bg-dark);
+    color: white;
+    padding: 60px 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item .number {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .stat-item .label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  /* Pathways Section */
+  .pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .pathway-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pathway-card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+
+  .pathway-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 auto 0;
+    flex-grow: 1;
+  }
+
+  .pathway-card li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .pathway-card li:before {
+    content: "• ";
+    color: var(--accent);
+    margin-right: 8px;
+  }
+
+  .pathway-card .pathway-cta {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  @media (max-width: 1024px) {
+    .pathways-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pathways-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Case Studies - Card Grid */
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .case-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+  }
+
+  .case-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);
+  }
+
+  .case-card .year {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .case-card h4 {
+    margin-bottom: 16px;
+    color: var(--text);
+    font-size: 18px;
+  }
+
+  .case-card .description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  .case-card .result {
+    background: var(--accent-tint);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .case-card a {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .case-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .case-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Capabilities */
@@ -271,192 +457,6 @@
   .section-desc {
     font-size: 16px;
     color: var(--text-secondary);
-    max-width: 700px;
-  }
-
-  /* Case studies */
-  .case {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 40px;
-    margin-bottom: 32px;
-  }
-
-  .case-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: var(--text-tertiary);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .case h3 {
-    margin-bottom: 28px;
-    font-size: 26px;
-  }
-
-  .case .block {
-    margin-bottom: 28px;
-  }
-
-  .case .label {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .case .block p {
-    color: var(--text-secondary);
-    font-size: 16px;
-    line-height: 1.8;
-  }
-
-  .case .block.result p {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  /* Mockups */
-  .mockup {
-    margin: 28px 0 32px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--bg-secondary);
-    padding: 24px;
-  }
-
-  .mockup .note {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    margin-top: 12px;
-    font-style: italic;
-  }
-
-  .stat-mockup {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
-  .stat-block {
-    text-align: center;
-  }
-
-  .stat-block .num {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--accent);
-    display: block;
-  }
-
-  .stat-block .cap {
-    font-size: 12px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 6px;
-  }
-
-  .stat-arrow {
-    font-size: 24px;
-    color: var(--text-tertiary);
-  }
-
-  .flow {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .flow .step {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 12px 16px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    flex: 1;
-    min-width: 140px;
-    text-align: center;
-  }
-
-  .flow .arrow {
-    color: var(--text-tertiary);
-    font-size: 18px;
-  }
-
-  .matrix {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-  }
-
-  .matrix .cell {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 12px 8px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--text-secondary);
-    font-weight: 500;
-  }
-
-  .matrix .cell.hl {
-    background: var(--accent-tint);
-    color: var(--accent);
-    border-color: var(--accent-light);
-  }
-
-  .matrix .cell.hl2 {
-    background: var(--slate-light);
-    color: var(--slate);
-    border-color: var(--slate-light);
-  }
-
-  .roadmap {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .roadmap .phase {
-    flex: 1;
-    min-width: 130px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 14px 12px;
-  }
-
-  .roadmap .phase .t {
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .roadmap .phase .s {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-tertiary);
-  }
-
-  .roadmap .phase.current .t {
-    color: var(--accent);
-  }
-
-  .roadmap .phase.current .s {
-    color: var(--accent);
   }
 
   /* Philosophy items */
@@ -526,21 +526,85 @@
     color: var(--text-secondary);
   }
 
-  /* About */
-  .about p {
+  /* About - 2 Column Layout */
+  .about-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  .about-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 4px solid var(--accent);
+  }
+
+  .about-photo.placeholder {
+    background: var(--bg-secondary);
+    border: 2px dashed var(--border);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-tertiary);
+  }
+
+  .about-content h3 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .about-content p {
     font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.8;
+    margin-bottom: 24px;
   }
 
-  .about p.voice {
+  .about-content p.voice {
     color: var(--text);
     font-style: italic;
-    font-size: 17px;
-    margin: 24px 0;
-    padding: 20px 0;
+    font-size: 16px;
+    padding: 24px;
+    background: var(--accent-tint);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    margin: 32px 0;
+  }
+
+  .about-content .personal-interests {
+    margin-top: 32px;
+    padding-top: 32px;
     border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+  }
+
+  .about-content .personal-interests p {
+    font-size: 14px;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 768px) {
+    .about-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .about-photo {
+      max-width: 300px;
+      margin: 0 auto;
+    }
   }
 
   /* Fun projects */
@@ -577,11 +641,70 @@
 
   /* Footer */
   footer {
+    background: var(--bg-dark);
+    color: white;
+    padding: 60px 0 40px;
     border-top: 1px solid var(--border);
-    padding: 48px 0 60px;
   }
 
   footer .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-section h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section li {
+    margin-bottom: 12px;
+  }
+
+  .footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .footer-section a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .footer-brand {
+    grid-column: 1;
+  }
+
+  .footer-brand .brand {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -589,41 +712,82 @@
     gap: 20px;
   }
 
-  footer .links {
-    display: flex;
-    gap: 28px;
-    font-size: 14px;
-  }
-
-  footer .copy {
+  .footer-copy {
     font-size: 13px;
-    color: var(--text-tertiary);
+    color: rgba(255, 255, 255, 0.5);
   }
 
   @media (max-width: 768px) {
+    footer .wrap {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
     h1 { font-size: 32px; }
     h2 { font-size: 24px; }
-    h3 { font-size: 20px; }
-    h4 { font-size: 16px; }
 
     .wrap {
       padding: 0 24px;
     }
 
     nav.wrap {
-      padding: 14px 20px;
+      padding: 14px 24px;
     }
 
-    .hero {
-      padding-top: 60px;
+    .nav-links {
+      gap: 20px;
+      font-size: 13px;
     }
 
-    .hero h1 {
-      margin-bottom: 20px;
+    section {
+      padding: 60px 0;
     }
 
-    .hero .lead {
+    section.tight {
+      padding: 48px 0;
+    }
+
+    .stats-grid {
+      gap: 24px;
+    }
+
+    .stat-item .number {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; }
+
+    .wrap {
+      padding: 0 20px;
+    }
+
+    nav.wrap {
+      padding: 12px 20px;
+      gap: 16px;
+    }
+
+    .brand {
       font-size: 16px;
+    }
+
+    .nav-links {
+      gap: 12px;
+      font-size: 12px;
     }
 
     section {
@@ -631,279 +795,189 @@
     }
 
     section.tight {
-      padding: 40px 0;
-    }
-
-    .section-head {
-      margin-bottom: 36px;
-    }
-
-    .capability-card {
-      padding: 24px;
-      min-height: auto;
-    }
-
-    .capabilities-grid {
-      gap: 24px;
-      margin-top: 36px;
-    }
-
-    .case {
-      padding: 24px;
-      margin-bottom: 28px;
-    }
-
-    .case h3 {
-      font-size: 22px;
-      margin-bottom: 24px;
-    }
-
-    .philosophy-grid {
-      gap: 20px;
-      margin-top: 36px;
-    }
-
-    .philosophy-item {
-      padding: 20px;
-    }
-
-    .philosophy-item p {
-      font-size: 14px;
-    }
-
-    .strip-list li {
-      padding: 18px 0;
-      font-size: 15px;
-    }
-
-    .projects-list {
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .project-item {
-      padding: 20px;
-    }
-
-    .matrix {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .mockup {
-      padding: 20px;
-      margin: 24px 0 28px;
-    }
-
-    footer {
-      padding: 36px 0 48px;
-    }
-
-    footer .wrap {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    footer .links {
-      gap: 20px;
-    }
-
-    .nav-links {
-      gap: 16px;
-      font-size: 13px;
+      padding: 36px 0;
     }
 
     .cta-row {
       flex-direction: column;
       width: 100%;
-      gap: 12px;
-      margin-top: 28px;
     }
 
     .btn {
       width: 100%;
       text-align: center;
-      padding: 14px 20px;
     }
 
-    .eyebrow {
-      margin-bottom: 12px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; }
-
-    .wrap {
-      padding: 0 20px;
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
-    nav.wrap {
-      padding: 12px 16px;
+    .stat-item .number {
+      font-size: 32px;
     }
 
-    .nav-links {
-      gap: 12px;
-      font-size: 12px;
+    .pathways-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
-    .brand {
-      font-size: 16px;
-    }
-
-    section {
-      padding: 40px 0;
-    }
-
-    section.tight {
-      padding: 32px 0;
-    }
-
-    .hero {
-      padding-top: 50px;
-    }
-
-    .hero h1 {
-      font-size: 26px;
-      margin-bottom: 16px;
-    }
-
-    .hero .lead {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .cta-row {
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .btn {
-      padding: 12px 16px;
-      font-size: 13px;
+    .pathway-card {
+      padding: 20px;
+      min-height: auto;
     }
 
     .capability-card {
       padding: 20px;
-    }
-
-    .capability-card h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .capability-card p {
-      font-size: 14px;
-    }
-
-    .case {
-      padding: 20px;
-      margin-bottom: 24px;
-    }
-
-    .case h3 {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .case .block {
-      margin-bottom: 20px;
-    }
-
-    .philosophy-item {
-      padding: 16px;
-    }
-
-    .philosophy-item p {
-      font-size: 13px;
-      line-height: 1.7;
+      min-height: 220px;
     }
 
     .project-item {
       padding: 16px;
     }
 
-    .project-item h4 {
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .project-item p {
-      font-size: 14px;
-    }
-
-    .strip-list li {
-      padding: 14px 0;
-      font-size: 14px;
-    }
-
-    .section-head {
-      margin-bottom: 28px;
-    }
-
-    .section-head h2 {
-      margin-bottom: 8px;
-    }
-
-    .section-desc {
-      font-size: 14px;
-    }
-
-    .about p {
-      font-size: 14px;
-    }
-
-    .about p.voice {
-      font-size: 15px;
-      padding: 16px 0;
-      margin: 20px 0;
-    }
-
-    footer {
-      padding: 28px 0 40px;
-    }
-
-    footer .links {
-      flex-direction: column;
-      gap: 12px;
-      font-size: 13px;
-    }
-
-    footer .copy {
-      font-size: 12px;
+    footer .wrap {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
   }
 </style>
 </head>
 <body>
-
 <header>
   <nav class="wrap">
-    <a class="brand" href="#top">Nathan Lee</a>
+    <a href="#" class="brand">Nathan Lee</a>
     <div class="nav-links">
-      <a href="#capabilities">What I Do</a>
       <a href="#work">Work</a>
-      <a href="#philosophy">AI Philosophy</a>
+      <a href="#thinking">Thinking</a>
+      <a href="#philosophy">Philosophy</a>
       <a href="#about">About</a>
     </div>
   </nav>
 </header>
 
-<div id="top"></div>
+<main>
 
+<!-- Hero Section -->
 <section class="hero wrap">
-  <p class="eyebrow">VP, Revenue Operations & GTM Strategy</p>
-  <h1>I transform closets of revenue tools into organized, usable spaces.</h1>
-  <p class="lead">For ten years, I've been the person hired to fix and enhance revenue processes inside enterprise organizations. I architect strategies, workflows, and systems that fall under Sales Enablement functions. I'm constantly in conversations about bringing tools to life, including how AI can solve real selling pain points. I take broken or disorganized revenue operations and turn them into scalable, functional systems that actually get used.</p>
-  <p class="lead" style="margin-bottom: 24px; font-weight: 500; color: var(--text);">I've doubled YoY product deepening revenue on top tier accounts, launched prospecting programs with 6-figure revenue impact on new-to-bank clients, and built governance structures that kept sales teams aligned for years.</p>
+  <p class="eyebrow">VP, REVENUE OPERATIONS &amp; GTM STRATEGY</p>
+  <h1>I build revenue systems that actually get used.</h1>
+  <p class="subheading">For ten years, I've been the person hired to fix and enhance revenue processes inside enterprise organizations. I architect strategies, workflows, and systems that fall under Sales Enablement functions. I'm constantly in conversations about bringing tools to life, including how AI can solve real selling pain points. I take broken or disorganized revenue operations and turn them into scalable, functional systems that teams actually adopt and use.</p>
   <div class="cta-row">
-    <a class="btn primary" href="#work">See case studies</a>
-    <a class="btn" href="assets/Nathan-Lee-Resume.pdf" target="_blank">Download resume</a>
+    <a href="#work" class="btn primary">See my work</a>
+    <a href="#thinking" class="btn">Get insights</a>
   </div>
 </section>
 
-<section class="wrap tight" id="capabilities">
+<!-- Social Proof Section -->
+<section class="stats-section">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="number">$300M+</div>
+        <div class="label">Revenue Influenced</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">50+</div>
+        <div class="label">Transformations</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">100+</div>
+        <div class="label">Students Taught</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Multiple Pathways Section -->
+<section class="wrap tight">
+  <div class="section-head">
+    <h2>How to engage with my work</h2>
+  </div>
+
+  <div class="pathways-grid">
+    <div class="pathway-card">
+      <h3>Your Work</h3>
+      <ul>
+        <li>Case Studies</li>
+        <li>Consulting</li>
+        <li>Frameworks</li>
+        <li>Transformations</li>
+      </ul>
+      <a href="#work" class="pathway-cta">Explore →</a>
+    </div>
+
+    <div class="pathway-card">
+      <h3>Your Thinking</h3>
+      <ul>
+        <li>Revenue Ops</li>
+        <li>AI &amp; Sales</li>
+        <li>Systems Thinking</li>
+        <li>Leadership</li>
+      </ul>
+      <a href="#philosophy" class="pathway-cta">Read →</a>
+    </div>
+
+    <div class="pathway-card">
+      <h3>Your Teaching</h3>
+      <ul>
+        <li>MBA Program</li>
+        <li>Frameworks</li>
+        <li>Speaking</li>
+        <li>Public Teaching</li>
+      </ul>
+      <a href="#about" class="pathway-cta">Learn →</a>
+    </div>
+
+    <div class="pathway-card">
+      <h3>Your Voice</h3>
+      <ul>
+        <li>On Being Real</li>
+        <li>Faith &amp; Work</li>
+        <li>Leadership Ethics</li>
+        <li>Personal Thoughts</li>
+      </ul>
+      <a href="#about" class="pathway-cta">Follow →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Case Studies Section -->
+<section class="wrap" id="work">
+  <div class="section-head">
+    <h2>Case studies</h2>
+    <p class="section-desc">Real transformations with measurable impact. Here's how I've helped companies organize their revenue operations.</p>
+  </div>
+
+  <div class="case-grid">
+    <div class="case-card">
+      <div class="year">2024</div>
+      <h4>Unified Client Intelligence Platform</h4>
+      <p class="description">Built a centralized platform connecting CRM, BI tools, and sales dashboards, creating a single source of truth for client data.</p>
+      <div class="result">$60K → $130K avg. revenue per client</div>
+      <a href="#">Read case study →</a>
+    </div>
+
+    <div class="case-card">
+      <div class="year">2023</div>
+      <h4>Prospecting Program Launch</h4>
+      <p class="description">Designed and launched a 6-figure revenue impact prospecting program serving 200+ sales team members across multiple geographies.</p>
+      <div class="result">6-figure revenue impact on new-to-bank clients</div>
+      <a href="#">Read case study →</a>
+    </div>
+
+    <div class="case-card">
+      <div class="year">2023</div>
+      <h4>Revenue Operations Framework</h4>
+      <p class="description">Architected governance structures and decision-making frameworks that kept sales teams aligned for multi-year periods.</p>
+      <div class="result">Sustained alignment across 500+ person team</div>
+      <a href="#">Read case study →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities Section -->
+<section class="wrap tight">
   <div class="section-head">
     <h2>What I actually do</h2>
     <p class="section-desc">I move between corporate strategy, technology systems, and sales teams to bring siloed groups together on a shared vision.</p>
@@ -911,159 +985,78 @@
 
   <div class="capabilities-grid">
     <div class="capability-card">
-      <h3>Strategy & Operations</h3>
+      <h3>Strategy &amp; Operations</h3>
       <p>I design revenue strategies and manage the programs that execute them: client deepening plans, account segmentation frameworks, prospecting initiatives. I work with sales leadership to understand the problem, turn it into a real plan, get executive buy-in, and manage stakeholder governance.</p>
     </div>
 
     <div class="capability-card">
-      <h3>Systems & Tools</h3>
-      <p>I architect the processes and workflows that keep revenue departments running. CRM integration, sales dashboards, BI tools, and usually at least one AI-powered automation that saves teams hundreds of hours a year. I work in Salesforce, Power BI, Tableau, Snowflake, Microsoft AI & PowerApps. I know what's possible and what's best for the end users.</p>
+      <h3>Systems &amp; Tools</h3>
+      <p>I architect the processes and workflows that keep revenue departments running. CRM integration, sales dashboards, BI tools, and usually at least one AI-powered automation that saves teams hundreds of hours a year. I work in Salesforce, Power BI, Tableau, Snowflake, Microsoft AI &amp; PowerApps. I know what's possible and what's best for the end users.</p>
     </div>
 
     <div class="capability-card">
-      <h3>Program Design & Change</h3>
+      <h3>Program Design &amp; Change</h3>
       <p>Strategy that doesn't land with the sales team is just documentation and wasted resources. I own full program rollout: change management, training, adoption metrics, feedback loops that make it better over time. I work with sellers, product partners, and leadership to make sure new initiatives are actually used.</p>
     </div>
 
     <div class="capability-card">
-      <h3>Leadership & Governance</h3>
+      <h3>Leadership &amp; Governance</h3>
       <p>I lead cross-functional teams through enterprise-wide problem solving: territory coverage models, incentive structures, competitive research deliverables, governance frameworks for programs. I make sure distributed teams can make consistent decisions without slowing things down.</p>
     </div>
   </div>
 </section>
 
-<section class="wrap" id="work">
-  <div class="section-head">
-    <h2>Case studies</h2>
-  </div>
-
-  <div class="case">
-    <div class="case-num">Case study 1</div>
-    <h3>Unified Client Intelligence Platform</h3>
-
-    <div class="mockup">
-      <div class="stat-mockup">
-        <div class="stat-block"><span class="num">$60K</span><span class="cap">Avg. deepening revenue / client</span></div>
-        <div class="stat-arrow">→</div>
-        <div class="stat-block"><span class="num">$130K+</span><span class="cap">Program-wide, year over year</span></div>
-      </div>
-      <p class="note">Illustrative figures shown for format only — see result below for the real numbers.</p>
-    </div>
-
-    <div class="block">
-      <span class="label">The problem</span>
-      <p>Our top relationship managers were running client deepening strategy sessions once a year, mostly off memory and scattered spreadsheets. Good RMs know their clients. But knowing isn't the same as having the data in front of you when you need it.</p>
-    </div>
-    <div class="block">
-      <span class="label">What I owned</span>
-      <p>I owned the strategy and rollout for our client deepening program, where RMs take their top 8-12 clients each year, sit down with product partners, and pitch new solutions. That meant designing the annual cadence, driving change management across RMs and product partners, and building the reporting underneath it, including a unified intelligence platform on Power BI and Tableau pulling from multiple Salesforce instances, covering 500+ users and 12,000+ accounts.</p>
-    </div>
-    <div class="block result">
-      <span class="label">The result</span>
-      <p>Average deepening revenue per client roughly doubled year over year, from around $60k to $130k+ on average, program-wide.</p>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-num">Case study 2</div>
-    <h3>AI PrepPackages</h3>
-
-    <div class="mockup">
-      <div class="flow">
-        <div class="step">Salesforce + internal systems + external data</div>
-        <div class="arrow">→</div>
-        <div class="step">AI-generated summary</div>
-        <div class="arrow">→</div>
-        <div class="step">Sent 10 days before session</div>
-        <div class="arrow">→</div>
-        <div class="step">RM + product partners, aligned</div>
-      </div>
-    </div>
-
-    <div class="block">
-      <span class="label">The problem</span>
-      <p>Ahead of an internal strategy session, the RM walks in already knowing the client cold. The product partners in the room usually don't. Not because they don't care, but because there's no real channel for that information to reach them unless the RM briefs each one by hand.</p>
-    </div>
-    <div class="block">
-      <span class="label">What I built</span>
-      <p>An AI-generated packet that goes out by email ten days before the internal strategy session. It pulls from Salesforce, internal source systems, and external data like Dun &amp; Bradstreet, turning all of it into one summary everyone reads before they're in the room.</p>
-    </div>
-    <div class="block result">
-      <span class="label">The result</span>
-      <p>Manual research time cut by more than half, and product partners walk into the session already caught up instead of hearing the client's story for the first time live.</p>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-num">Case study 3</div>
-    <h3>Territory Coverage Governance</h3>
-
-    <div class="mockup">
-      <div class="roadmap">
-        <div class="phase current"><div class="t">Define coverage</div><div class="s">Current focus</div></div>
-        <div class="phase current"><div class="t">Store coverage</div><div class="s">Current focus</div></div>
-        <div class="phase"><div class="t">Visualize coverage</div><div class="s">Near-term</div></div>
-        <div class="phase"><div class="t">Integrate & automate</div><div class="s">Future</div></div>
-      </div>
-    </div>
-
-    <div class="block">
-      <span class="label">The problem</span>
-      <p>Coverage existed, but nobody could see all of it at once. Different groups managed their own account and territory assignment models—some by geography, some by industry, some by account size—with no shared documentation. If you needed to know who owned a given account or prospect, the honest answer was usually "check a spreadsheet, or ask around."</p>
-    </div>
-    <div class="block">
-      <span class="label">What I built</span>
-      <p>I led the initiative to fix that. I benchmarked how competing banks handle territory coverage, pulled in research from firms like McKinsey, and turned that into a concrete recommendation: a governed data source with defined owners for each model, documentation standards every group would follow, and a searchable coverage directory that answers who covers what and why. I didn't stop at the recommendation. I built a working prototype of the lookup tool myself, so leadership could see the concept before being asked to invest in it.</p>
-    </div>
-    <div class="block result">
-      <span class="label">The result</span>
-      <p>Leadership signed off on the governance model and phased roadmap. This one's still active—part of the point: this is the kind of ambiguous, cross-team problem that lands on my desk, and how I go about solving it.</p>
-    </div>
-  </div>
-</section>
-
+<!-- Philosophy Section -->
 <section class="wrap tight" id="philosophy">
   <div class="section-head">
-    <h2>AI Philosophy</h2>
-    <p class="section-desc">I don't just implement AI tools. I think carefully about when and how they actually work.</p>
+    <h2>A.I. Philosophy</h2>
+    <p class="section-desc">How I think about AI solving real selling challenges.</p>
   </div>
 
   <div class="philosophy-grid">
     <div class="philosophy-item">
-      <p><strong>AI works best when invisible and just works.</strong> The moment your team thinks about the AI, it's too visible. Good AI solutions disappear into the workflow.</p>
+      <h4 style="color: var(--accent); margin-bottom: 12px;">AI automates the administrative, not the relational</h4>
+      <p>The best use of AI in sales is automating the work that keeps salespeople from selling. Not the prospecting call, the CRM data entry. Not the negotiation, the contract routing. Not the close, the deal documentation. We're using the wrong tools to solve sales problems if we're automating the human skills that actually create value.</p>
     </div>
 
     <div class="philosophy-item">
-      <p><strong>AI can't solve broken or incomplete workflows.</strong> If your process is already messy, adding AI just automates the mess. Fix the workflow first, then add intelligence.</p>
+      <h4 style="color: var(--accent); margin-bottom: 12px;">Enablement is about eliminating friction</h4>
+      <p>Every tool, process, and framework should have a clear answer to: "What problem does this solve for the person using it?" If the answer is "it helps the company measure things" or "it gives leaders visibility," you've built something that salespeople will work around. Real enablement is about making their job easier.</p>
     </div>
 
     <div class="philosophy-item">
-      <p><strong>Match complexity to capability.</strong> Don't design an AI solution at complexity level 9 if your team is at fluency level 4. Meet people where they are.</p>
+      <h4 style="color: var(--accent); margin-bottom: 12px;">Systems scale consistency, not shortcuts</h4>
+      <p>Bad systems are worse than no systems. Good systems are invisible. They make it easier to do the right thing than to cut corners. They distribute expertise so new team members can do what experienced ones do. They document lessons learned so patterns improve over time.</p>
     </div>
 
     <div class="philosophy-item">
-      <p><strong>The real work is adoption.</strong> Building the AI is the easy part. Getting sales teams to actually use it, trust it, and embed it into their day is the hard part.</p>
+      <h4 style="color: var(--accent); margin-bottom: 12px;">Adoption requires trust</h4>
+      <p>People adopt tools, processes, and strategies when they trust that (1) leadership believes in it, (2) it will actually help them, and (3) they were part of shaping it. Building adoption means real listening, real incorporation of feedback, and real transparency about why things work the way they do.</p>
     </div>
   </div>
 </section>
 
+<!-- Systems &amp; Tools Section -->
 <section class="wrap tight">
   <div class="section-head">
-    <h2>Other systems I've built</h2>
+    <h2>Systems I've built</h2>
   </div>
+
   <ul class="strip-list">
-    <li><strong>Reverse Referral (product-only prospecting)</strong> — Identified single-product clients and routed them to RMs as warm leads. Year one: $5-10M in new revenue across 25-50 new-to-bank clients.</li>
-    <li><strong>Account segmentation framework</strong> — Designed a structured tiering system with manual override flags for retention, deepening, and VIP focus. Feeds territory coverage, marketing lead routing, and pipeline health assessment.</li>
-    <li><strong>Board-level competitive analysis</strong> — Quarterly competitive research presented to CEO and board, tracking market shifts and positioning implications.</li>
-    <li><strong>BDO commercial operating model</strong> — Designed GTM strategy, market coverage, incentive structure, territory design, hiring model, and onboarding workflow for new 15-person Business Development function.</li>
-    <li><strong>Seismic rollout</strong> — Deployed to 400+ users, fully integrated into Salesforce with adoption metrics and ongoing optimization.</li>
+    <li><strong>Account Segmentation Frameworks</strong> — Criteria-based systems for organizing accounts by business model, relationship stage, and revenue potential. Created governance around segmentation changes to keep teams aligned.</li>
+    <li><strong>Client Deepening Programs</strong> — Structured workflows for identifying expansion opportunities, managing the client deepening process, and measuring program effectiveness across large teams.</li>
+    <li><strong>Prospecting Initiatives</strong> — Launched multi-channel prospecting programs with training, tooling, metrics tracking, and feedback loops for continuous improvement.</li>
+    <li><strong>Governance Structures</strong> — Designed decision-making frameworks and cross-functional alignment models that let distributed teams move fast without losing consistency.</li>
+    <li><strong>Enablement Resources</strong> — One-pagers, playbooks, dashboards, and training materials that help salespeople execute faster and more effectively.</li>
   </ul>
 </section>
 
+<!-- Tools Section -->
 <section class="wrap tight">
   <div class="section-head">
     <h2>Tools I work in</h2>
   </div>
+
   <div class="tags">
     <span class="tag">Salesforce (Certified Administrator)</span>
     <span class="tag">Power BI</span>
@@ -1083,17 +1076,34 @@
   </div>
 </section>
 
-<section class="wrap about" id="about">
+<!-- About Section -->
+<section class="wrap" id="about">
   <div class="section-head">
     <h2>About</h2>
   </div>
-  <p>I'm a husband, father, deacon, and preacher who happens to also work at a Fortune 500 bank as a VP of Revenue Operations & GTM Strategy. I have an MBA from Western Kentucky University, where I also teach as an adjunct professor, covering management, finance, and entrepreneurship to 100+ students a year. I'm a Salesforce Certified Administrator and Microsoft Certified AI Transformation Leader. My early career was focused on startup consulting, business planning, and financial projections for small business owners.</p>
 
-  <p class="voice">I'm a huge fantasy book nerd (Brandon Sanderson is the GOAT), I enjoy playing pickleball with the family, and I check out the local coffee shop at any new town I visit. I ground myself in relationships, which helps us all navigate an ever-changing world where technology and social media are fighting for our attention.</p>
+  <div class="about-layout">
+    <div class="about-photo placeholder">
+      <span>Photo coming soon</span>
+    </div>
 
-  <p>I move fast. I care about outcomes, not politics. I work best with leaders who want the thing actually built, not just talked about.</p>
+    <div class="about-content">
+      <h3>An operations expert, teacher, and — most of all — a builder.</h3>
+
+      <p>I'm a husband, father, deacon, and preacher who happens to also work at a Fortune 500 bank as a VP of Revenue Operations &amp; GTM Strategy. I have an MBA from Western Kentucky University, where I also teach as an adjunct professor, covering management, finance, and entrepreneurship to 100+ students a year. I'm a Salesforce Certified Administrator and Microsoft Certified AI Transformation Leader. My early career was focused on startup consulting, business planning, and financial projections for small business owners.</p>
+
+      <p class="voice">I'm a huge fantasy book nerd (Brandon Sanderson is the GOAT), I enjoy playing pickleball with the family, and I check out the local coffee shop at any new town I visit. I ground myself in relationships, which helps us all navigate an ever-changing world where technology and social media are fighting for our attention.</p>
+
+      <p>I move fast. I care about outcomes, not politics. I work best with leaders who want the thing actually built, not just talked about.</p>
+
+      <div class="personal-interests">
+        <p><strong>Interests:</strong> Brandon Sanderson | Pickleball | Coffee culture | Teaching | Systems thinking | Turning ideas into reality</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- Fun Projects Section -->
 <section class="wrap tight">
   <div class="section-head">
     <h2>Fun projects</h2>
@@ -1102,28 +1112,60 @@
   <div class="projects-list">
     <div class="project-item">
       <h4>Congregate Classroom</h4>
-      <p>Bible class curriculum built for modern churches. More coming soon.</p>
+      <p>Bible class curriculum built for modern churches. Combining biblical scholarship with practical application for groups navigating faith in today's world. More coming soon.</p>
     </div>
 
     <div class="project-item">
       <h4>Publisher author</h4>
-      <p>Writing about faith, strategy, and how they intersect. More coming soon.</p>
-    </div>
-
-    <div class="project-item">
-      <h4>AV + Wedding DJ</h4>
-      <p>Behind the scenes at weddings and events. More coming soon.</p>
+      <p>Writing about faith, strategy, and how they intersect. Exploring what it looks like to build and lead with integrity in business. More coming soon.</p>
     </div>
   </div>
 </section>
 
-<footer id="contact">
+</main>
+
+<!-- Footer -->
+<footer>
   <div class="wrap">
-    <span class="copy">© 2026 Nathan Lee</span>
-    <div class="links">
-      <a href="assets/Nathan-Lee-Resume.pdf" target="_blank">Resume</a>
-      <a href="https://www.linkedin.com/in/nathanleeky/" target="_blank">LinkedIn</a>
-      <a href="mailto:Contact@nathanleeky.com">Email</a>
+    <div class="footer-brand">
+      <a href="#" class="brand">Nathan Lee</a>
+      <p>Helping enterprise leaders build revenue systems that actually get used.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#work">Case Studies</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#about">Projects</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="#">Speaking</a></li>
+        <li><a href="#">Teaching</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Insights</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Email</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Nathan Lee. Built with intention.</p>
     </div>
   </div>
 </footer>
