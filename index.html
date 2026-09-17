@@ -147,6 +147,94 @@
     opacity: 0.9;
   }
 
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #1A1C1E;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(250, 251, 252, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #E1E4EA;
+      padding: 16px 28px;
+      gap: 16px;
+      animation: slideDown 0.3s ease;
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+
+    .nav-menu a {
+      padding: 12px 0;
+      border-bottom: 1px solid #F0F0F0;
+    }
+
+    .nav-menu a:last-child {
+      border-bottom: none;
+      padding: 12px 16px;
+    }
+
+    nav > a {
+      font-size: 16px;
+    }
+
+    nav {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Main content */
   main {
     width: 100%;
@@ -872,16 +960,19 @@
     h2 { font-size: 24px; }
 
     nav {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
+      padding: 12px 16px;
     }
 
-    nav > div {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-      width: 100%;
+    nav > a {
+      font-size: 14px;
+    }
+
+    .nav-menu {
+      padding: 12px 16px;
+    }
+
+    .nav-menu a {
+      font-size: 14px;
     }
 
     .hero {
@@ -952,6 +1043,60 @@
     .stack-grid {
       grid-template-columns: 1fr;
     }
+
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .capabilities-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .philosophy-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .hero {
+      padding: 60px 16px 40px;
+    }
+
+    .book-section {
+      padding: 40px 16px;
+    }
+
+    .book-promo {
+      padding: 32px 20px;
+    }
+
+    .book-cover {
+      width: 100px;
+      height: 150px;
+    }
+
+    .book-grid {
+      gap: 16px;
+    }
+
+    .btn-light {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+
+    .stat {
+      padding: 20px 0;
+    }
+
+    .stat-number {
+      font-size: 28px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+    }
   }
 </style>
 </head>
@@ -960,7 +1105,12 @@
 <header>
   <nav>
     <a href="#">Nathan Lee</a>
-    <div>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-menu">
       <a href="#capabilities">Capabilities</a>
       <a href="#stack">Stack</a>
       <a href="#about">About</a>
@@ -1304,6 +1454,31 @@
   document.querySelectorAll('.stat-number, .stat-label').forEach(el => {
     el.classList.add('stat-text');
     observer.observe(el);
+  });
+
+  // Hamburger menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav')) {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
   });
 </script>
 
