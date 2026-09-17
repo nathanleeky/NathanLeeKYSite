@@ -50,20 +50,18 @@
 
   .scroll-animate {
     opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
   }
 
   .scroll-animate.visible {
-    animation-play-state: running;
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 
   .stat-text {
-    animation: fadeInUp 0.6s ease-out 0.1s forwards;
     opacity: 0;
   }
 
   .stat-text.visible {
-    animation-play-state: running;
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 
   /* Header */
@@ -1226,6 +1224,7 @@
           entry.target.style.animationDelay = (index * 0.1) + 's';
         }
         entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
