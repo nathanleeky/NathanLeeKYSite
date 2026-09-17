@@ -36,6 +36,36 @@
   a { color: #0F766E; text-decoration: none; transition: opacity 0.2s; }
   a:hover { opacity: 0.8; }
 
+  /* Scroll animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scroll-animate {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .scroll-animate.visible {
+    animation-play-state: running;
+  }
+
+  .stat-text {
+    animation: fadeInUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .stat-text.visible {
+    animation-play-state: running;
+  }
+
   /* Header */
   header {
     position: sticky;
@@ -485,11 +515,12 @@
   }
 
   .work-result {
-    background: #F0FDF4;
-    border-left: 3px solid #0F766E;
-    padding: 12px 16px;
-    border-radius: 4px;
-    font-size: 13px;
+    background: transparent;
+    border-left: none;
+    border-bottom: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 14px;
     color: #0F766E;
     font-weight: 600;
   }
@@ -1175,6 +1206,42 @@
   </section>
 
 </main>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add staggered animation delay for cards
+        if (entry.target.classList.contains('capability-card') ||
+            entry.target.classList.contains('tool-card') ||
+            entry.target.classList.contains('philosophy-card')) {
+          const parent = entry.target.parentElement;
+          const index = Array.from(parent.children).indexOf(entry.target);
+          entry.target.style.animationDelay = (index * 0.1) + 's';
+        }
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe capability cards, tool cards, and philosophy cards
+  document.querySelectorAll('.capability-card, .tool-card, .philosophy-card, .stat').forEach(el => {
+    el.classList.add('scroll-animate');
+    observer.observe(el);
+  });
+
+  // Observe stat text separately for staggered animation
+  document.querySelectorAll('.stat-number, .stat-label').forEach(el => {
+    el.classList.add('stat-text');
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
