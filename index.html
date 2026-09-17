@@ -20,7 +20,6 @@
     color: #1A1C1E;
     font-size: 16px;
     line-height: 1.6;
-    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5 {
@@ -74,14 +73,6 @@
 
   nav a {
     color: #6B7280;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  nav a:hover {
-    color: #0F766E;
-    border-bottom: 2px solid #0F766E;
   }
 
   nav a:last-child {
@@ -273,7 +264,7 @@
     width: 24px;
     height: 2px;
     background: #0F766E;
-    display: none;
+    display: inline-block;
     flex-shrink: 0;
   }
 
@@ -434,12 +425,11 @@
     color: #1A1C1E;
     font-style: normal;
     font-size: 14px;
-    padding: 0;
-    background: transparent;
-    border-left: none;
-    border-radius: 0;
+    padding: 12px 24px;
+    background: #F0FDF4;
+    border-left: 3px solid #0F766E;
+    border-radius: 4px;
     margin: 0 0 24px;
-    line-height: 1.6;
   }
 
   /* Work section */
@@ -480,12 +470,11 @@
   }
 
   .work-result {
-    background: transparent;
-    border-left: none;
-    border-bottom: 2px solid #0F766E;
-    padding: 0 0 8px 0;
-    border-radius: 0;
-    font-size: 14px;
+    background: #F0FDF4;
+    border-left: 3px solid #0F766E;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 13px;
     color: #0F766E;
     font-weight: 600;
   }
@@ -1171,6 +1160,35 @@
   </section>
 
 </main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-brand">Nathan Lee</span>
+      <p class="footer-brand-desc">Helping enterprise leaders build revenue systems that actually get used.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Case Studies</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@nathanleeky.com">Email</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2026 Nathan Lee. Built with intention.</p>
+  </div>
+</footer>
 
 </body>
 </html>
