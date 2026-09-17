@@ -14,7 +14,7 @@
 <style>
   * { box-sizing: border-box; }
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
   }
   body {
     margin: 0;
@@ -72,6 +72,20 @@
   }
 
   .work-card.visible {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .hero-image,
+  .hero-text,
+  .congregate-cover,
+  .book-cover {
+    opacity: 0;
+  }
+
+  .hero-image.visible,
+  .hero-text.visible,
+  .congregate-cover.visible,
+  .book-cover.visible {
     animation: fadeInUp 0.6s ease-out forwards;
   }
 
@@ -1217,6 +1231,43 @@
 </main>
 
 <script>
+  // Smooth scroll with custom easing
+  function smoothScroll(target, duration = 1500) {
+    const startTop = window.scrollY;
+    const targetElement = document.querySelector(target);
+    if (!targetElement) return;
+
+    const targetTop = targetElement.offsetTop - 80;
+    const distance = targetTop - startTop;
+    let start = null;
+
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const ease = easeInOutCubic(progress);
+      window.scrollTo(0, startTop + distance * ease);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  // Handle navigation clicks for smooth scrolling
+  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = link.getAttribute('href');
+      smoothScroll(target);
+    });
+  });
+
   // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,
@@ -1242,7 +1293,7 @@
   }, observerOptions);
 
   // Observe capability cards, tool cards, philosophy cards, work cards, and stats
-  document.querySelectorAll('.capability-card, .tool-card, .philosophy-card, .work-card, .stat').forEach(el => {
+  document.querySelectorAll('.capability-card, .tool-card, .philosophy-card, .work-card, .stat, .hero-image, .hero-text, .congregate-cover, .book-cover').forEach(el => {
     el.classList.add('scroll-animate');
     observer.observe(el);
   });
