@@ -642,6 +642,113 @@
     font-weight: 600;
   }
 
+  /* Timeline Layout */
+  .work-timeline {
+    position: relative;
+    padding: 40px 0;
+  }
+
+  .work-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #E1E4EA;
+  }
+
+  .timeline-item {
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 3px solid #0F766E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F766E;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .timeline-item.visible .timeline-dot {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: translateX(-50%) scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(-50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .timeline-content {
+    position: relative;
+    width: calc(50% - 40px);
+    margin-left: 0;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+  }
+
+  .timeline-content {
+    background: white;
+    border: 1px solid #E1E4EA;
+    border-radius: 8px;
+    padding: 28px;
+    opacity: 0;
+  }
+
+  .timeline-item.visible .timeline-content {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .timeline-content h4 {
+    font-size: 18px;
+    margin: 0 0 12px 0;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .timeline-year {
+    font-size: 12px;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
   /* Book promo section */
   .book-section {
     max-width: 1024px;
@@ -1088,6 +1195,32 @@
       grid-template-columns: 1fr;
     }
 
+    .work-timeline::before {
+      left: 20px;
+    }
+
+    .timeline-item {
+      margin-bottom: 48px;
+    }
+
+    .timeline-dot {
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 12px;
+    }
+
+    .timeline-content {
+      width: 100%;
+      margin-left: 0 !important;
+      margin-top: 0;
+      padding: 20px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: 0 !important;
+    }
+
     .capabilities-grid {
       grid-template-columns: 1fr;
     }
@@ -1395,32 +1528,53 @@
     <div class="container">
       <div class="section-eyebrow">The Deliverables</div>
       <h2>Case studies in enterprise strategy</h2>
-      <div class="work-grid">
-        <div class="work-card">
-          <div class="work-year">2026</div>
-          <h4>Institutional Territory Management platform</h4>
-          <p>Coverage lived in spreadsheets, decks and people's heads, and each business line did it differently. I created the strategy, the program and the tool. It is a governed system of record for client ownership, territory assignments and coverage accountability. Coverage models are built by geography, industry and relationship manager, with exception management for shared coverage, regional splits and industry overrides. Users can find the coverage owner, relationship managers and product specialists for a client, and reporting shows coverage gaps and ownership conflicts. Built with Power Apps, SharePoint and Power Automate.</p>
-          <div class="work-result">500+ users on one governed record of who covers which client</div>
+      <div class="work-timeline">
+        <div class="timeline-item scroll-animate">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Ongoing</div>
+            <h4>Institutional Territory Management</h4>
+            <p>Coverage lived in spreadsheets, decks and people's heads, and each business line did it differently. I created the strategy, the program and the tool. It is a governed system of record for client ownership, territory assignments and coverage accountability. Coverage models are built by geography, industry and relationship manager, with exception management for shared coverage, regional splits and industry overrides. Users can find the coverage owner, relationship managers and product specialists for a client, and reporting shows coverage gaps and ownership conflicts. Built with Power Apps, SharePoint and Power Automate.</p>
+            <div class="work-result">500+ users on one governed record of who covers which client</div>
+          </div>
         </div>
-        <div class="work-card">
-          <h4>Operating model assessment</h4>
-          <p>A financial services business asked for a RACI chart. I widened it into a review of client coverage, service responsibilities and decision rights.</p>
+
+        <div class="timeline-item scroll-animate">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Ongoing</div>
+            <h4>Competitive intelligence</h4>
+            <p>I set up the function. Requests come in by email and the data goes back the same way. It uses win and loss data, market signals and competitor research, and the findings go to executives and the board to inform growth strategy and capital allocation.</p>
+          </div>
         </div>
-        <div class="work-card">
-          <h4>Competitive intelligence</h4>
-          <p>I set up the function. Requests come in by email and the data goes back the same way. It uses win and loss data, market signals and competitor research, and the findings go to executives and the board to inform growth strategy and capital allocation.</p>
+
+        <div class="timeline-item scroll-animate">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2024–Ongoing</div>
+            <h4>Operating model assessment</h4>
+            <p>A financial services business asked for a RACI chart. I widened it into a review of client coverage, service responsibilities and decision rights.</p>
+          </div>
         </div>
-        <div class="work-card">
-          <div class="work-year">2023 to present</div>
-          <h4>Building Deeper Relationships (BDR) program</h4>
-          <p>The program had gone stale. Bankers treated it like a checklist, and getting materials ready for product partner strategy sessions took too much time. I took it over in 2023 and rebuilt it. It now covers about 3,300 selected relationships.</p>
-          <div class="work-result">From 2024 to 2025, relationship review coverage grew 13% and completed planning engagements grew 36%.</div>
+
+        <div class="timeline-item scroll-animate">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2023–2026</div>
+            <h4>Building Deeper Relationships (BDR) program</h4>
+            <p>The program had gone stale. Bankers treated it like a checklist, and getting materials ready for product partner strategy sessions took too much time. I took it over in 2023 and rebuilt it. It now covers about 3,300 selected relationships.</p>
+            <div class="work-result">From 2024 to 2025, relationship review coverage grew 13% and completed planning engagements grew 36%.</div>
+          </div>
         </div>
-        <div class="work-card">
-          <div class="work-year">2025</div>
-          <h4>Prospecting program</h4>
-          <p>I was the strategy lead for a prospecting program spanning 100 bankers. We found product-only clients of the bank, used AI to spot cross-sell opportunities, and built a framework for using warm introductions to sell.</p>
-          <div class="work-result">New revenue in 2025 from clients new to institutional banking, across 100 bankers</div>
+
+        <div class="timeline-item scroll-animate">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2025</div>
+            <h4>Prospecting program</h4>
+            <p>I was the strategy lead for a prospecting program spanning 100 bankers. We found product-only clients of the bank, used AI to spot cross-sell opportunities, and built a framework for using warm introductions to sell.</p>
+            <div class="work-result">New revenue in 2025 from clients new to institutional banking, across 100 bankers</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1548,8 +1702,8 @@
     });
   }, observerOptions);
 
-  // Observe capability cards, tool cards, philosophy cards, work cards, and stats
-  document.querySelectorAll('.capability-card, .tool-card, .philosophy-card, .work-card, .stat, .hero-image, .hero-text, .congregate-cover, .book-cover').forEach(el => {
+  // Observe capability cards, tool cards, philosophy cards, timeline items, and stats
+  document.querySelectorAll('.capability-card, .tool-card, .philosophy-card, .timeline-item, .stat, .hero-image, .hero-text, .congregate-cover, .book-cover').forEach(el => {
     el.classList.add('scroll-animate');
     observer.observe(el);
   });
