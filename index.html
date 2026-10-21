@@ -766,6 +766,26 @@
     border-radius: 8px;
     padding: 28px;
     opacity: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .timeline-content > div:first-of-type {
+    grid-column: 1;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content > div:first-of-type {
+    order: 2;
+  }
+
+  .timeline-item:nth-child(even) .carousel-container {
+    order: 1;
   }
 
   /* Carousel styles */
@@ -775,14 +795,13 @@
     background: #f9fafb;
     border-radius: 8px;
     overflow: hidden;
-    margin: 24px 0;
   }
 
   .carousel-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
-    min-height: 400px;
+    min-height: 300px;
   }
 
   .carousel-slides {
@@ -1365,10 +1384,21 @@
       margin-left: 0 !important;
       margin-top: 0;
       padding: 20px;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
     .timeline-item:nth-child(even) .timeline-content {
       margin-left: 0 !important;
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content > div:first-of-type {
+      order: auto;
+    }
+
+    .timeline-item:nth-child(even) .carousel-container {
+      order: auto;
     }
 
     .capabilities-grid {
@@ -1686,40 +1716,43 @@
         <div class="timeline-item scroll-animate">
           <div class="timeline-dot">1</div>
           <div class="timeline-content">
-            <div class="timeline-year">Ongoing</div>
-            <h4>Institutional Territory Management</h4>
-
+            <div>
+              <div class="timeline-year">Ongoing</div>
+              <h4>Institutional Territory Management</h4>
+              <p>Coverage lived in spreadsheets, decks and people's heads, and each business line did it differently. I created the strategy, the program and the tool. It is a governed system of record for client ownership, territory assignments and coverage accountability. Coverage models are built by geography, industry and relationship manager, with exception management for shared coverage, regional splits and industry overrides. Users can find the coverage owner, relationship managers and product specialists for a client, and reporting shows coverage gaps and ownership conflicts. Built with Power Apps, SharePoint and Power Automate.</p>
+              <div class="work-result">500+ users on one governed record of who covers which client</div>
+            </div>
             <div class="carousel-container">
               <div class="carousel-wrapper">
                 <div class="carousel-slides" id="carousel-slides-1">
                   <div class="carousel-slide">
                     <div style="text-align: center;">
                       <img src="images/territory-graphic-1.png" alt="Territory editor interface">
-                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Territory editor interface for assigning clients and coverage ownership</p>
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Territory editor interface</p>
                     </div>
                   </div>
                   <div class="carousel-slide">
                     <div style="text-align: center;">
                       <img src="images/territory-graphic-2.png" alt="Before and after comparison">
-                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Transformation from scattered spreadsheets to a single governed system</p>
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Transformation comparison</p>
                     </div>
                   </div>
                   <div class="carousel-slide">
                     <div style="text-align: center;">
                       <img src="images/territory-graphic-3.png" alt="Coverage map visualization">
-                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Geographic and client coverage map showing territory assignments</p>
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Geographic coverage map</p>
                     </div>
                   </div>
                   <div class="carousel-slide">
                     <div style="text-align: center;">
                       <img src="images/territory-graphic-4.png" alt="Review and submission workflow">
-                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Review and approval workflow for coverage changes</p>
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Review workflow</p>
                     </div>
                   </div>
                   <div class="carousel-slide">
                     <div style="text-align: center;">
                       <img src="images/territory-graphic-5.png" alt="Territory manager editing interface">
-                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Easy interface for reps and managers to edit territory assignments</p>
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Manager interface</p>
                     </div>
                   </div>
                 </div>
@@ -1734,19 +1767,42 @@
                 <button class="carousel-dot" onclick="carouselGo(1, 4)"></button>
               </div>
             </div>
-
-            <p>Coverage lived in spreadsheets, decks and people's heads, and each business line did it differently. I created the strategy, the program and the tool. It is a governed system of record for client ownership, territory assignments and coverage accountability. Coverage models are built by geography, industry and relationship manager, with exception management for shared coverage, regional splits and industry overrides. Users can find the coverage owner, relationship managers and product specialists for a client, and reporting shows coverage gaps and ownership conflicts. Built with Power Apps, SharePoint and Power Automate.</p>
-            <div class="work-result">500+ users on one governed record of who covers which client</div>
           </div>
         </div>
 
         <div class="timeline-item scroll-animate">
           <div class="timeline-dot">2</div>
           <div class="timeline-content">
-            <div class="timeline-year">Ongoing</div>
-            <h4>Executive Competitor Insights</h4>
-            <p>I lead a quarterly competitor analysis program that synthesizes earnings reports, financial performance data, market signals, and strategic moves from competitor banks into clear executive narratives. The insights focus on implications, risks, and options rather than raw data, with structured recommendations that help leaders prioritize responses, refine positioning, and align on capital allocation. Over time, this has become a repeatable decision support capability that strengthens strategic clarity and execution.</p>
-            <div class="work-result">Executive-level deck delivered quarterly to CEO and Board</div>
+            <div class="carousel-container">
+              <div class="carousel-wrapper">
+                <div class="carousel-slides" id="carousel-slides-2">
+                  <div class="carousel-slide">
+                    <div style="text-align: center;">
+                      <img src="images/competitor-graphic-1.png" alt="Quarterly deck">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Quarterly executive deck</p>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <div style="text-align: center;">
+                      <img src="images/competitor-graphic-2.png" alt="Analysis framework">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Competitive analysis framework</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="carouselPrev(2)">‹</button>
+              <button class="carousel-button next" onclick="carouselNext(2)">›</button>
+              <div class="carousel-nav" id="carousel-nav-2">
+                <button class="carousel-dot active" onclick="carouselGo(2, 0)"></button>
+                <button class="carousel-dot" onclick="carouselGo(2, 1)"></button>
+              </div>
+            </div>
+            <div>
+              <div class="timeline-year">Ongoing</div>
+              <h4>Executive Competitor Insights</h4>
+              <p>I lead a quarterly competitor analysis program that synthesizes earnings reports, financial performance data, market signals, and strategic moves from competitor banks into clear executive narratives. The insights focus on implications, risks, and options rather than raw data, with structured recommendations that help leaders prioritize responses, refine positioning, and align on capital allocation. Over time, this has become a repeatable decision support capability that strengthens strategic clarity and execution.</p>
+              <div class="work-result">Executive-level deck delivered quarterly to CEO and Board</div>
+            </div>
           </div>
         </div>
 
@@ -1984,6 +2040,7 @@
 
   // Initialize carousels
   initCarousel(1, 5);
+  initCarousel(2, 2);
 </script>
 
 </body>
