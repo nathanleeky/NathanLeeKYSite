@@ -1809,10 +1809,36 @@
         <div class="timeline-item scroll-animate">
           <div class="timeline-dot">3</div>
           <div class="timeline-content">
-            <div class="timeline-year">2024–Ongoing</div>
-            <h4>Operating model assessment</h4>
-            <p>Engaged to create a RACI, I expanded the scope into an operating model assessment spanning client coverage, service responsibilities, and decision rights. The review aligned front, middle, and back office roles, clarified ownership and handoffs, and supported go-to-market design work for the BDO strategy and corporate trust teams.</p>
-            <div class="work-result">Operating model with ownership, handoffs, and decision rights across front, middle, and back office</div>
+            <div>
+              <div class="timeline-year">2024–Ongoing</div>
+              <h4>Operating model assessment</h4>
+              <p>Engaged to create a RACI, I expanded the scope into an operating model assessment spanning client coverage, service responsibilities, and decision rights. The review aligned front, middle, and back office roles, clarified ownership and handoffs, and supported go-to-market design work for the BDO strategy and corporate trust teams.</p>
+              <div class="work-result">Operating model with ownership, handoffs, and decision rights across front, middle, and back office</div>
+            </div>
+            <div class="carousel-container">
+              <div class="carousel-wrapper">
+                <div class="carousel-slides" id="carousel-slides-3">
+                  <div class="carousel-slide">
+                    <div style="text-align: center;">
+                      <img src="images/opmodel-graphic-1.png" alt="Operating model diagram">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Operating model with roles &amp; responsibilities</p>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <div style="text-align: center;">
+                      <img src="images/opmodel-graphic-2.png" alt="Before and after comparison">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Transformation and clarification</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="carouselPrev(3)">‹</button>
+              <button class="carousel-button next" onclick="carouselNext(3)">›</button>
+              <div class="carousel-nav" id="carousel-nav-3">
+                <button class="carousel-dot active" onclick="carouselGo(3, 0)"></button>
+                <button class="carousel-dot" onclick="carouselGo(3, 1)"></button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2041,6 +2067,7 @@
   // Initialize carousels
   initCarousel(1, 5);
   initCarousel(2, 2);
+  initCarousel(3, 2);
 </script>
 
 </body>
