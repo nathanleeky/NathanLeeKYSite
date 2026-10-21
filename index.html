@@ -705,10 +705,7 @@
   .timeline-item {
     margin-bottom: 60px;
     position: relative;
-    display: grid;
-    grid-template-columns: calc(50% - 40px) 80px calc(50% - 40px);
-    gap: 0;
-    align-items: start;
+    min-height: 300px;
   }
 
   .timeline-item:last-child {
@@ -716,8 +713,10 @@
   }
 
   .timeline-dot {
-    position: relative;
-    grid-column: 2;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
     width: 44px;
     height: 44px;
     background: white;
@@ -730,9 +729,6 @@
     font-weight: 600;
     color: #0F766E;
     z-index: 2;
-    flex-shrink: 0;
-    margin-top: 20px;
-    align-self: start;
   }
 
   .timeline-item.visible .timeline-dot {
@@ -751,41 +747,40 @@
   }
 
   .timeline-content {
-    position: relative;
+    position: absolute;
+    width: calc(50% - 40px);
     background: white;
     border: 1px solid #E1E4EA;
     border-radius: 8px;
     padding: 28px;
     opacity: 0;
+    top: 0;
   }
 
   .timeline-item:nth-child(odd) .timeline-content {
-    grid-column: 3;
+    left: 0;
   }
 
   .timeline-item:nth-child(even) .timeline-content {
-    grid-column: 1;
+    right: 0;
   }
 
   .timeline-item:nth-child(odd) .carousel-container {
-    grid-column: 1;
+    right: 0;
   }
 
   .timeline-item:nth-child(even) .carousel-container {
-    grid-column: 3;
-  }
-
-  .carousel-container {
-    position: relative;
+    left: 0;
   }
 
   /* Carousel styles */
   .carousel-container {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    width: calc(50% - 40px);
     background: #f9fafb;
     border-radius: 8px;
     overflow: hidden;
+    top: 0;
   }
 
   .carousel-wrapper {
