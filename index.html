@@ -1845,10 +1845,43 @@
         <div class="timeline-item scroll-animate">
           <div class="timeline-dot">4</div>
           <div class="timeline-content">
-            <div class="timeline-year">2023–2026</div>
-            <h4>Building Deeper Relationships (BDR) program</h4>
-            <p>The program had gone stale. Bankers treated it like a checklist, and getting materials ready for product partner strategy sessions took too much time. I took it over in 2023 and rebuilt it. It now covers about 3,300 selected relationships.</p>
-            <div class="work-result">From 2024 to 2025, relationship review coverage grew 13% and completed planning engagements grew 36%.</div>
+            <div class="carousel-container">
+              <div class="carousel-wrapper">
+                <div class="carousel-slides" id="carousel-slides-4">
+                  <div class="carousel-slide">
+                    <div style="text-align: center;">
+                      <img src="images/bdr-graphic-1.png" alt="BDR tools overview">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">BDR program tools and workflow</p>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <div style="text-align: center;">
+                      <img src="images/bdr-graphic-2.png" alt="Before and after transformation">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Program transformation and improvements</p>
+                    </div>
+                  </div>
+                  <div class="carousel-slide">
+                    <div style="text-align: center;">
+                      <img src="images/bdr-graphic-3.png" alt="AI prep package">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">AI-generated prep packages for strategy sessions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="carouselPrev(4)">‹</button>
+              <button class="carousel-button next" onclick="carouselNext(4)">›</button>
+              <div class="carousel-nav" id="carousel-nav-4">
+                <button class="carousel-dot active" onclick="carouselGo(4, 0)"></button>
+                <button class="carousel-dot" onclick="carouselGo(4, 1)"></button>
+                <button class="carousel-dot" onclick="carouselGo(4, 2)"></button>
+              </div>
+            </div>
+            <div>
+              <div class="timeline-year">2023–2026</div>
+              <h4>Building Deeper Relationships (BDR) program</h4>
+              <p>The program had gone stale. Bankers treated it like a checklist, and getting materials ready for product partner strategy sessions took too much time. I took it over in 2023 and rebuilt it. It now covers about 3,300 selected relationships.</p>
+              <div class="work-result">From 2024 to 2025, relationship review coverage grew 13% and completed planning engagements grew 36%.</div>
+            </div>
           </div>
         </div>
 
@@ -2068,6 +2101,7 @@
   initCarousel(1, 5);
   initCarousel(2, 2);
   initCarousel(3, 2);
+  initCarousel(4, 3);
 </script>
 
 </body>
