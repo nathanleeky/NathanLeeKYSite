@@ -768,6 +768,109 @@
     opacity: 0;
   }
 
+  /* Carousel styles */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    background: #f9fafb;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .carousel-slides {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9fafb;
+  }
+
+  .carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .carousel-nav {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .carousel-dot.active {
+    background: white;
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 5;
+  }
+
+  .carousel-button:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .carousel-button.prev {
+    left: 12px;
+  }
+
+  .carousel-button.next {
+    right: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-button {
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+    }
+  }
+  }
+
   .timeline-item.visible .timeline-content {
     animation: fadeInUp 0.6s ease-out forwards;
   }
@@ -1577,6 +1680,38 @@
           <div class="timeline-content">
             <div class="timeline-year">Ongoing</div>
             <h4>Institutional Territory Management</h4>
+
+            <div class="carousel-container">
+              <div class="carousel-wrapper">
+                <div class="carousel-slides" id="carousel-slides-1">
+                  <div class="carousel-slide">
+                    <img src="images/territory-graphic-1.png" alt="Territory management system overview">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="images/territory-graphic-2.png" alt="Coverage model visualization">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="images/territory-graphic-3.png" alt="Client ownership tracking">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="images/territory-graphic-4.png" alt="Territory assignments">
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="images/territory-graphic-5.png" alt="Reporting and analytics">
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="carouselPrev(1)">‹</button>
+              <button class="carousel-button next" onclick="carouselNext(1)">›</button>
+              <div class="carousel-nav" id="carousel-nav-1">
+                <button class="carousel-dot active" onclick="carouselGo(1, 0)"></button>
+                <button class="carousel-dot" onclick="carouselGo(1, 1)"></button>
+                <button class="carousel-dot" onclick="carouselGo(1, 2)"></button>
+                <button class="carousel-dot" onclick="carouselGo(1, 3)"></button>
+                <button class="carousel-dot" onclick="carouselGo(1, 4)"></button>
+              </div>
+            </div>
+
             <p>Coverage lived in spreadsheets, decks and people's heads, and each business line did it differently. I created the strategy, the program and the tool. It is a governed system of record for client ownership, territory assignments and coverage accountability. Coverage models are built by geography, industry and relationship manager, with exception management for shared coverage, regional splits and industry overrides. Users can find the coverage owner, relationship managers and product specialists for a client, and reporting shows coverage gaps and ownership conflicts. Built with Power Apps, SharePoint and Power Automate.</p>
             <div class="work-result">500+ users on one governed record of who covers which client</div>
           </div>
@@ -1783,6 +1918,49 @@
       navMenu.classList.remove('active');
     }
   });
+
+  // Carousel functions
+  const carousels = {};
+
+  function initCarousel(id, slides) {
+    carousels[id] = {
+      current: 0,
+      total: slides
+    };
+  }
+
+  function updateCarousel(id) {
+    const carousel = carousels[id];
+    const slidesContainer = document.querySelector(`#carousel-slides-${id}`);
+    const dots = document.querySelectorAll(`#carousel-nav-${id} .carousel-dot`);
+
+    const offset = -carousel.current * 100;
+    slidesContainer.style.transform = `translateX(${offset}%)`;
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === carousel.current);
+    });
+  }
+
+  function carouselNext(id) {
+    const carousel = carousels[id];
+    carousel.current = (carousel.current + 1) % carousel.total;
+    updateCarousel(id);
+  }
+
+  function carouselPrev(id) {
+    const carousel = carousels[id];
+    carousel.current = (carousel.current - 1 + carousel.total) % carousel.total;
+    updateCarousel(id);
+  }
+
+  function carouselGo(id, index) {
+    carousels[id].current = index;
+    updateCarousel(id);
+  }
+
+  // Initialize carousels
+  initCarousel(1, 5);
 </script>
 
 </body>
