@@ -782,7 +782,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
   }
 
   .carousel-slides {
@@ -797,11 +797,22 @@
     align-items: center;
     justify-content: center;
     background: #f9fafb;
+    padding: 20px;
+    overflow: auto;
+  }
+
+  .carousel-slide > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .carousel-slide img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 80%;
     object-fit: contain;
   }
 
@@ -1685,19 +1696,34 @@
               <div class="carousel-wrapper">
                 <div class="carousel-slides" id="carousel-slides-1">
                   <div class="carousel-slide">
-                    <img src="images/territory-graphic-1.png" alt="Territory management system overview">
+                    <div style="text-align: center;">
+                      <img src="images/territory-graphic-1.png" alt="Territory editor interface">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Territory editor interface for assigning clients and coverage ownership</p>
+                    </div>
                   </div>
                   <div class="carousel-slide">
-                    <img src="images/territory-graphic-2.png" alt="Coverage model visualization">
+                    <div style="text-align: center;">
+                      <img src="images/territory-graphic-2.png" alt="Before and after comparison">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Transformation from scattered spreadsheets to a single governed system</p>
+                    </div>
                   </div>
                   <div class="carousel-slide">
-                    <img src="images/territory-graphic-3.png" alt="Client ownership tracking">
+                    <div style="text-align: center;">
+                      <img src="images/territory-graphic-3.png" alt="Coverage map visualization">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Geographic and client coverage map showing territory assignments</p>
+                    </div>
                   </div>
                   <div class="carousel-slide">
-                    <img src="images/territory-graphic-4.png" alt="Territory assignments">
+                    <div style="text-align: center;">
+                      <img src="images/territory-graphic-4.png" alt="Review and submission workflow">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Review and approval workflow for coverage changes</p>
+                    </div>
                   </div>
                   <div class="carousel-slide">
-                    <img src="images/territory-graphic-5.png" alt="Reporting and analytics">
+                    <div style="text-align: center;">
+                      <img src="images/territory-graphic-5.png" alt="Territory manager editing interface">
+                      <p style="font-size: 14px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">Easy interface for reps and managers to edit territory assignments</p>
+                    </div>
                   </div>
                 </div>
               </div>
