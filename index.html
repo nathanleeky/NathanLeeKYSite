@@ -908,6 +908,334 @@
     margin-bottom: 8px;
   }
 
+  /* New case studies redesign - properly sized images */
+  .cases-redesign {
+    display: none;
+    padding: 40px 0;
+  }
+
+  .cases-redesign.active {
+    display: block;
+  }
+
+  .cases-desktop {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .cases-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #E1E4EA;
+  }
+
+  .cases-list li {
+    padding: 0;
+    margin: 0;
+  }
+
+  .case-btn {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    padding: 16px 14px;
+    border: none;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid #E1E4EA;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .case-btn:hover:not([aria-selected="true"]) .case-title {
+    color: #1A1C1E;
+  }
+
+  .case-btn[aria-selected="true"] {
+    background: #fff;
+    border-left-color: #0F766E;
+  }
+
+  .case-btn[aria-selected="true"] .case-title {
+    color: #1A1C1E;
+  }
+
+  .case-btn:not([aria-selected="true"]) .case-title {
+    color: #475569;
+  }
+
+  .case-num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F766E;
+    flex-shrink: 0;
+    line-height: 1.3;
+  }
+
+  .case-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .case-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    transition: color 0.2s;
+  }
+
+  .case-year {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #9CA3AF;
+    margin: 0;
+  }
+
+  .cases-viewer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .viewer-image {
+    aspect-ratio: 16 / 10;
+    background: #f3f4f6;
+    border: 1px solid #E1E4EA;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    max-height: 400px;
+  }
+
+  .viewer-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .viewer-thumbs {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .thumbs-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .thumb-btn {
+    width: 72px;
+    height: 46px;
+    border-radius: 6px;
+    border: 2px solid rgba(15, 118, 110, 0);
+    cursor: pointer;
+    overflow: hidden;
+    background: #f3f4f6;
+    transition: all 0.2s;
+    opacity: 0.6;
+    padding: 0;
+  }
+
+  .thumb-btn:hover {
+    opacity: 1;
+  }
+
+  .thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumb-btn.active {
+    border-color: #0F766E;
+    opacity: 1;
+  }
+
+  .caption-area {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+    justify-content: center;
+    min-width: 150px;
+  }
+
+  .img-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+  }
+
+  .img-counter {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #9CA3AF;
+    margin: 0;
+  }
+
+  .viewer-text {
+    border-top: 1px solid #E1E4EA;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .viewer-text h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .viewer-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .viewer-text .summary {
+    color: #6B7280;
+  }
+
+  .viewer-text .result {
+    font-weight: 600;
+    color: #0F766E;
+  }
+
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .cases-desktop {
+      display: none;
+    }
+
+    .cases-mobile {
+      display: block;
+    }
+
+    .mobile-case {
+      border-top: 1px solid #E1E4EA;
+      padding: 24px 16px 28px;
+    }
+
+    .mobile-case:first-child {
+      border-top: none;
+    }
+
+    .mobile-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: baseline;
+    }
+
+    .mobile-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .mobile-gallery {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 16px;
+      padding-inline: 16px;
+      padding-bottom: 12px;
+      margin-left: -16px;
+      margin-right: -16px;
+      margin-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery-slide {
+      flex: none;
+      width: 82%;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .gallery-img {
+      aspect-ratio: 4 / 3;
+      background: #f3f4f6;
+      border: 1px solid #E1E4EA;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .gallery-img img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .gallery-caption {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #6B7280;
+      margin: 0;
+    }
+
+    .mobile-text {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mobile-text p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .mobile-text .summary {
+      color: #6B7280;
+    }
+
+    .mobile-text .result {
+      font-weight: 600;
+      color: #0F766E;
+    }
+  }
+
   /* Book promo section */
   .book-section {
     max-width: 1024px;
@@ -1705,7 +2033,18 @@
     <div class="container">
       <div class="section-eyebrow">The Deliverables</div>
       <h2>Case studies in enterprise strategy</h2>
-      <div class="work-timeline">
+
+      <!-- New redesigned layout -->
+      <div class="cases-redesign active">
+        <div class="cases-desktop">
+          <ul class="cases-list" role="tablist" id="cases-list"></ul>
+          <div class="cases-viewer" id="desktop-viewer"></div>
+        </div>
+        <div class="cases-mobile" id="mobile-viewer"></div>
+      </div>
+
+      <!-- Old timeline (hidden) -->
+      <div class="work-timeline" style="display: none;">
         <div class="timeline-item scroll-animate">
           <div class="timeline-dot">1</div>
           <div class="timeline-content">
@@ -2077,52 +2416,161 @@
     }
   });
 
-  // Carousel functions
-  const carousels = {};
+  // Case studies redesign - data and functions
+  const CASES_DATA = [
+    {
+      num: '01',
+      year: 'Ongoing',
+      title: 'Institutional Territory Management',
+      summary: 'Coverage lived in spreadsheets, decks and people\'s heads, and each business line did it differently. I created the strategy, the program and the tool: a governed system of record for client ownership, territory assignments and coverage accountability. Coverage models are built by geography, industry and relationship manager, and reporting shows coverage gaps and ownership conflicts. Built with Power Apps, SharePoint and Power Automate.',
+      result: '500+ users on one governed record of who covers which client',
+      images: [
+        { src: 'territory-graphic-1.png', alt: 'Territory editor interface' },
+        { src: 'territory-graphic-2.png', alt: 'Transformation comparison' },
+        { src: 'territory-graphic-3.png', alt: 'Geographic coverage map' },
+        { src: 'territory-graphic-4.png', alt: 'Review workflow' },
+        { src: 'territory-graphic-5.png', alt: 'Manager interface' }
+      ]
+    },
+    {
+      num: '02',
+      year: 'Ongoing',
+      title: 'Executive Competitor Insights',
+      summary: 'I lead a quarterly competitor analysis program that synthesizes earnings reports, financial performance data, market signals and strategic moves from competitor banks into clear executive narratives. The insights focus on implications, risks and options rather than raw data, helping leaders prioritize responses, refine positioning and align on capital allocation.',
+      result: 'Executive-level deck delivered quarterly to CEO and Board',
+      images: [
+        { src: 'competitor-graphic-1.png', alt: 'Quarterly executive deck' },
+        { src: 'competitor-graphic-2.png', alt: 'Competitive analysis framework' }
+      ]
+    },
+    {
+      num: '03',
+      year: '2024–Ongoing',
+      title: 'Operating model assessment',
+      summary: 'Engaged to create a RACI, I expanded the scope into an operating model assessment spanning client coverage, service responsibilities, and decision rights. The review aligned front, middle, and back office roles, clarified ownership and handoffs, and supported go-to-market design work for the BDO strategy and corporate trust teams.',
+      result: 'Operating model with ownership, handoffs, and decision rights across front, middle, and back office',
+      images: [
+        { src: 'opmodel-graphic-1.png', alt: 'Operating model with roles & responsibilities' },
+        { src: 'opmodel-graphic-2.png', alt: 'Transformation and clarification' }
+      ]
+    },
+    {
+      num: '04',
+      year: '2023–2026',
+      title: 'Building Deeper Relationships (BDR) program',
+      summary: 'The program had gone stale. Bankers treated it like a checklist, and getting materials ready for product partner strategy sessions took too much time. I took it over in 2023 and rebuilt it. It now covers about 3,300 selected relationships.',
+      result: 'From 2024 to 2025, relationship review coverage grew 13% and completed planning engagements grew 36%.',
+      images: [
+        { src: 'bdr-graphic-1.png', alt: 'BDR program tools and workflow' },
+        { src: 'bdr-graphic-2.png', alt: 'Program transformation and improvements' },
+        { src: 'bdr-graphic-3.png', alt: 'AI-generated prep packages for strategy sessions' }
+      ]
+    },
+    {
+      num: '05',
+      year: '2025',
+      title: 'Prospecting program',
+      summary: 'I was the strategy lead for a prospecting program spanning 100 bankers. We found product-only clients of the bank, used AI to spot cross-sell opportunities, and built a framework for using warm introductions to sell.',
+      result: 'New revenue in 2025 from clients new to institutional banking, across 100 bankers',
+      images: [
+        { src: 'prospecting-graphic-1.png', alt: 'Program transformation and results' },
+        { src: 'prospecting-graphic-2.png', alt: 'Leader dashboard for tracking opportunities' },
+        { src: 'prospecting-graphic-3.png', alt: 'Warm introduction framework and process' }
+      ]
+    }
+  ];
 
-  function initCarousel(id, slides) {
-    carousels[id] = {
-      current: 0,
-      total: slides
-    };
+  let currentCaseIdx = 0;
+  let currentImageIdx = 0;
+
+  function renderDesktopCase() {
+    const caseData = CASES_DATA[currentCaseIdx];
+    const img = caseData.images[currentImageIdx];
+
+    document.getElementById('desktop-viewer').innerHTML = `
+      <div class="viewer-image">
+        <img src="images/${img.src}" alt="${img.alt}" loading="${currentCaseIdx === 0 && currentImageIdx === 0 ? 'eager' : 'lazy'}">
+      </div>
+      <div class="viewer-thumbs">
+        <div class="thumbs-container">
+          ${caseData.images.map((img, i) => `
+            <button class="thumb-btn ${i === currentImageIdx ? 'active' : ''}" onclick="switchImage(${i})" title="${img.alt}">
+              <img src="images/${img.src}" alt="${img.alt}" loading="lazy">
+            </button>
+          `).join('')}
+        </div>
+        <div class="caption-area">
+          <p class="img-caption">${img.alt}</p>
+          <p class="img-counter">${currentImageIdx + 1} / ${caseData.images.length}</p>
+        </div>
+      </div>
+      <div class="viewer-text">
+        <h3>${caseData.title}</h3>
+        <p class="summary">${caseData.summary}</p>
+        <p class="result">${caseData.result}</p>
+      </div>
+    `;
   }
 
-  function updateCarousel(id) {
-    const carousel = carousels[id];
-    const slidesContainer = document.querySelector(`#carousel-slides-${id}`);
-    const dots = document.querySelectorAll(`#carousel-nav-${id} .carousel-dot`);
+  function renderMobileCase() {
+    document.getElementById('mobile-viewer').innerHTML = CASES_DATA.map(caseData => `
+      <div class="mobile-case">
+        <div class="mobile-header">
+          <span class="case-num">${caseData.num}</span>
+          <p class="case-year">${caseData.year}</p>
+        </div>
+        <h3 class="mobile-title">${caseData.title}</h3>
+        <div class="mobile-gallery">
+          ${caseData.images.map(img => `
+            <div class="gallery-slide">
+              <div class="gallery-img">
+                <img src="images/${img.src}" alt="${img.alt}" loading="lazy">
+              </div>
+              <p class="gallery-caption">${img.alt}</p>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mobile-text">
+          <p class="summary">${caseData.summary}</p>
+          <p class="result">${caseData.result}</p>
+        </div>
+      </div>
+    `).join('');
+  }
 
-    const offset = -carousel.current * 100;
-    slidesContainer.style.transform = `translateX(${offset}%)`;
+  function renderCaseList() {
+    document.getElementById('cases-list').innerHTML = CASES_DATA.map((c, i) => `
+      <li>
+        <button class="case-btn ${i === 0 ? 'active' : ''}" role="tab" aria-selected="${i === 0}" onclick="switchCase(${i})">
+          <span class="case-num">${c.num}</span>
+          <div class="case-info">
+            <h4 class="case-title">${c.title}</h4>
+            <p class="case-year">${c.year}</p>
+          </div>
+        </button>
+      </li>
+    `).join('');
+  }
 
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === carousel.current);
+  function switchCase(idx) {
+    currentCaseIdx = idx;
+    currentImageIdx = 0;
+    document.querySelectorAll('.case-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', i === idx);
+      btn.setAttribute('aria-selected', i === idx);
     });
+    renderDesktopCase();
   }
 
-  function carouselNext(id) {
-    const carousel = carousels[id];
-    carousel.current = (carousel.current + 1) % carousel.total;
-    updateCarousel(id);
+  function switchImage(idx) {
+    currentImageIdx = idx;
+    renderDesktopCase();
   }
 
-  function carouselPrev(id) {
-    const carousel = carousels[id];
-    carousel.current = (carousel.current - 1 + carousel.total) % carousel.total;
-    updateCarousel(id);
-  }
-
-  function carouselGo(id, index) {
-    carousels[id].current = index;
-    updateCarousel(id);
-  }
-
-  // Initialize carousels
-  initCarousel(1, 5);
-  initCarousel(2, 2);
-  initCarousel(3, 2);
-  initCarousel(4, 3);
-  initCarousel(5, 3);
+  // Initialize new redesign
+  renderCaseList();
+  renderDesktopCase();
+  renderMobileCase();
 </script>
 
 </body>
