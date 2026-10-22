@@ -979,7 +979,7 @@
     position: relative;
     aspect-ratio: 16 / 10;
     width: 100%;
-    padding: 0;
+    padding: 8px;
     background: #F3F4F6;
     border: 1px solid #E1E4EA;
     border-radius: 10px;
@@ -2179,7 +2179,8 @@
       year: 'Ongoing',
       title: 'Territory Management',
       summary: 'Coverage lived in spreadsheets, decks and people\'s heads, and each business line did it differently. I created the strategy, the program and the tool: a governed system of record for client ownership, territory assignments and coverage accountability. Coverage models are built by geography, industry and relationship manager, and reporting shows coverage gaps and ownership conflicts. Built with Power Apps, SharePoint and Power Automate.',
-      result: '500+ users on one governed record of who covers which client',
+      resultHighlight: '500+',
+      resultText: 'users on one governed record of who covers which client',
       images: [
         { src: 'territory-graphic-1.png', alt: 'Territory editor interface' },
         { src: 'territory-graphic-2.png', alt: 'Transformation comparison' },
@@ -2191,7 +2192,8 @@
       year: 'Ongoing',
       title: 'Competitor Insights',
       summary: 'I lead a quarterly competitor analysis program that synthesizes earnings reports, financial performance data, market signals and strategic moves from competitor banks into clear executive narratives. The insights focus on implications, risks and options rather than raw data, helping leaders prioritize responses, refine positioning and align on capital allocation.',
-      result: 'Executive-level deck delivered quarterly to CEO and Board',
+      resultHighlight: 'Quarterly',
+      resultText: 'executive-level deck delivered to the CEO and Board',
       images: [
         { src: 'competitor-graphic-1.png', alt: 'Quarterly executive deck' },
         { src: 'competitor-graphic-2.png', alt: 'Competitive analysis framework' }
@@ -2202,7 +2204,8 @@
       year: '2024–Ongoing',
       title: 'Operating Model',
       summary: 'Engaged to create a RACI, I expanded the scope into an operating model assessment spanning client coverage, service responsibilities, and decision rights. The review aligned front, middle, and back office roles, clarified ownership and handoffs, and supported go-to-market design work for the BDO strategy and corporate trust teams.',
-      result: 'Operating model with ownership, handoffs, and decision rights across front, middle, and back office',
+      resultHighlight: 'Front to back',
+      resultText: 'operating model with ownership, handoffs, and decision rights across front, middle, and back office',
       images: [
         { src: 'opmodel-graphic-1.png', alt: 'Operating model with roles & responsibilities' },
         { src: 'opmodel-graphic-2.png', alt: 'Transformation and clarification' }
@@ -2213,7 +2216,10 @@
       year: '2023–2026',
       title: 'BDR Program',
       summary: 'The program had gone stale. Bankers treated it like a checklist, and getting materials ready for product partner strategy sessions took too much time. I took it over in 2023 and rebuilt it. It now covers about 3,300 selected relationships.',
-      result: 'From 2024 to 2025, relationship review coverage grew 13% and completed planning engagements grew 36%.',
+      stats: [
+        { highlight: '+13%', text: 'relationship review coverage, 2024 to 2025' },
+        { highlight: '+36%', text: 'completed planning engagements, 2024 to 2025' }
+      ],
       images: [
         { src: 'bdr-graphic-1.png', alt: 'BDR program tools and workflow' },
         { src: 'bdr-graphic-2.png', alt: 'Program transformation and improvements' },
@@ -2225,7 +2231,8 @@
       year: '2025',
       title: 'Prospecting',
       summary: 'I was the strategy lead for a prospecting program spanning 100 bankers. We found product-only clients of the bank, used AI to spot cross-sell opportunities, and built a framework for using warm introductions to sell.',
-      result: 'New revenue in 2025 from clients new to institutional banking, across 100 bankers',
+      resultHighlight: '100 bankers',
+      resultText: 'new revenue in 2025 from clients new to institutional banking',
       images: [
         { src: 'prospecting-graphic-1.png', alt: 'Program transformation and results' },
         { src: 'prospecting-graphic-2.png', alt: 'Leader dashboard for tracking opportunities' },
@@ -2269,16 +2276,31 @@
     document.getElementById('cases-next').onclick = () => switchImage((currentImageIdx + 1) % caseData.images.length);
 
     const infoEl = document.getElementById('cases-info');
+    let statsHTML = '';
+
+    if (caseData.stats) {
+      statsHTML = `<div class="cases-stats">
+        ${caseData.stats.map(stat => `
+          <div class="cases-stat">
+            <strong>${stat.highlight}</strong>
+            <span>${stat.text}</span>
+          </div>
+        `).join('')}
+      </div>`;
+    } else if (caseData.resultHighlight) {
+      statsHTML = `<div class="cases-stats">
+        <div class="cases-stat">
+          <strong>${caseData.resultHighlight}</strong>
+          <span>${caseData.resultText}</span>
+        </div>
+      </div>`;
+    }
+
     infoEl.innerHTML = `
       <p class="cases-status">${caseData.year}</p>
       <h2>${caseData.title}</h2>
       <p>${caseData.summary}</p>
-      <div class="cases-stats">
-        <div class="cases-stat">
-          <strong>${caseData.result.split(/[\s,]/)[0]}</strong>
-          <span>${caseData.result.substring(caseData.result.indexOf(' ') + 1)}</span>
-        </div>
-      </div>
+      ${statsHTML}
     `;
 
     document.querySelectorAll('.cases-tab').forEach((btn, i) => {
